@@ -2,10 +2,148 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>آموزش‌های هوش مصنوعی</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آموزش‌های هوش مصنوعی | عظیمی</title>
+    <style>
+        /* تنظیمات پایه سبک نئو بروتالیسم */
+        body {
+            background-color: #f4f0eb; /* رنگ پس‌زمینه کرم ملایم برای تضاد بهتر */
+            font-family: 'Tahoma', sans-serif;
+            color: #000;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* هدر سایت */
+        header {
+            background-color: #ffde59; /* زرد جیغ */
+            border: 4px solid #000;
+            padding: 30px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 8px 8px 0px #000; /* سایه سخت و تیز */
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 900;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        /* جایگاه تبلیغات (برای تپسل در آینده) */
+        .ad-space {
+            background-color: #ff914d; /* نارنجی نئونی */
+            border: 4px solid #000;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            box-shadow: 6px 6px 0px #000;
+        }
+
+        /* کارت‌های مقالات */
+        .article-card {
+            background-color: #fff;
+            border: 4px solid #000;
+            padding: 25px;
+            margin-bottom: 40px;
+            box-shadow: 8px 8px 0px #000;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .article-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0px #000;
+        }
+
+        .article-card h2 {
+            margin-top: 0;
+            font-size: 1.8rem;
+            border-bottom: 4px solid #000;
+            padding-bottom: 10px;
+        }
+
+        /* کادر مخصوص ویدیوهای آپارات */
+        .video-wrapper {
+            border: 4px solid #000;
+            margin-top: 20px;
+            background-color: #000;
+            /* این تنظیمات ویدیو را ریسپانسیو می‌کند */
+            position: relative;
+            padding-bottom: 56.25%; 
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* فوتر سایت */
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 20px;
+            font-weight: bold;
+            background-color: #c1ff72; /* سبز نئونی */
+            border: 4px solid #000;
+            box-shadow: 6px 6px 0px #000;
+        }
+    </style>
 </head>
-<body style="font-family: Tahoma, sans-serif; text-align: center; margin-top: 50px;">
-    <h1>سلام! به سایت من خوش آمدید</h1>
-    <p>این سایت به زودی به یک پایگاه عالی برای مقالات هوش مصنوعی و ویدیوهای آموزشی تبدیل خواهد شد.</p>
+<body>
+
+    <div class="container">
+        
+        <!-- بخش هدر -->
+        <header>
+            <h1>هوش مصنوعی و تولید محتوا</h1>
+            <p>یادگیری قدم به قدم ابزارهای جدید</p>
+        </header>
+
+        <!-- جایگاه تبلیغات -->
+        <div class="ad-space">
+            [ جایگاه تبلیغات شما - کدهای تپسل اینجا قرار می‌گیرند ]
+        </div>
+
+        <!-- بخش مقالات و ویدیوها -->
+        <main>
+            <article class="article-card">
+                <h2>معرفی بهترین ابزارهای هوش مصنوعی</h2>
+                <p>در این مقاله به بررسی ابزارهایی می‌پردازیم که می‌توانند سرعت تولید محتوا را چند برابر کنند. در ویدیوی زیر که در آپارات منتشر کرده‌ام، محیط کاربری یکی از این ابزارها را کامل توضیح داده‌ام:</p>
+                
+                <!-- کادر ویدیوی آپارات -->
+                <div class="video-wrapper">
+                    <!-- به جای این خط، کدی که آپارات برای امبد می‌دهد را می‌گذاریم -->
+                    <iframe src="https://www.aparat.com/video/video/embed/videohash/YOUR_VIDEO_HASH/vt/frame" allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+                </div>
+            </article>
+        </main>
+
+        <!-- بخش فوتر -->
+        <footer>
+            <p>تمامی حقوق برای وبلاگ عظیمی محفوظ است.</p>
+        </footer>
+
+    </div>
+
 </body>
 </html>
