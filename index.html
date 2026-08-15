@@ -3,139 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>آموزش‌های هوش مصنوعی</title>
+    <!-- عنوان سایت که در سرچ گوگل نمایش داده می‌شود -->
+    <title>وبلاگ آموزش هوش مصنوعی من</title>
+    
+    <!-- فونت زیبای وزیرمتن برای خوانایی بهتر -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.0/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
     
     <style>
-        /* تنظیمات پس زمینه رنگارنگ برای دیده شدن افکت شیشه‌ای */
-        body {
-            margin: 0;
-            font-family: Tahoma, 'Segoe UI', sans-serif;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #ffe66d, #845ec2);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-            color: #000;
+        /* تنظیمات رنگ‌ها و استایل‌ها */
+        :root {
+            /* تنظیمات شیشه‌ای */
+            --glass-bg: rgba(255, 255, 255, 0.25);
+            /* تنظیمات نئوبروتالیسم (خطوط مشکی و سایه سفت) */
+            --neo-border: 4px solid #000;
+            --neo-shadow: 10px 10px 0 #000;
         }
 
-        /* انیمیشن حرکت آرام پس‌زمینه */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Vazirmatn', sans-serif;
+            /* پس زمینه رنگارنگ متحرک برای نمایان شدن شیشه مایع */
+            background: linear-gradient(45deg, #ff9ff3, #feca57, #48dbfb, #ff6b6b);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+            color: #000;
+            line-height: 1.8;
+        }
+
         @keyframes gradientBG {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
 
-        /* کادر اصلی سایت */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 30px 15px;
-        }
-
-        /* استایل ترکیب نئو بروتالیسم و لیکویید گلس */
-        .glass-brutal-card {
-            background: rgba(255, 255, 255, 0.25); /* شیشه نیمه شفاف */
-            backdrop-filter: blur(12px); /* افکت تاری شیشه اپل */
-            -webkit-backdrop-filter: blur(12px); /* برای پشتیبانی در سافاری */
-            border: 4px solid #000; /* حاشیه ضخیم بروتالیسم */
-            box-shadow: 12px 12px 0px #000; /* سایه تند و تیز بروتالیسم */
-            border-radius: 20px; /* گوشه‌های گرد آیفونی */
+        /* این کلاس جادوی ترکیب شیشه و نئوبروتالیسم است */
+        .glass-neo {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: var(--neo-border);
+            box-shadow: var(--neo-shadow);
+            border-radius: 20px;
             padding: 25px;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
 
-        header h1 {
+        header {
+            text-align: center;
+            margin: 50px auto;
+            max-width: 800px;
+            width: 90%;
+        }
+
+        h1 {
             font-size: 2.5rem;
-            margin-top: 0;
-            text-shadow: 2px 2px 0 #fff; /* افکت متن */
+            margin: 0 0 10px 0;
+            text-shadow: 2px 2px 0 #fff; /* سایه سفید برای خوانایی */
         }
 
-        /* دکمه‌های نئو بروتالیسم */
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            width: 90%;
+        }
+
+        /* استایل کارت‌های مقالات */
+        .post {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .post:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 14px 14px 0 #000;
+        }
+
+        .post-title {
+            font-size: 1.8rem;
+            margin-top: 0;
+            border-bottom: 3px dashed #000;
+            padding-bottom: 10px;
+        }
+
+        .post-date {
+            font-size: 0.9rem;
+            font-weight: bold;
+            background: #000;
+            color: #fff;
+            padding: 5px 12px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        /* استایل اختصاصی برای ویدیوهای آپارات که خراب نشوند */
+        .aparat-container {
+            border: var(--neo-border);
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 20px 0;
+            background: #000;
+        }
+        
+        .h_iframe-aparat_embed_frame {
+            position: relative;
+            padding-top: 56.25%; /* نسبت تصویر 16:9 */
+        }
+        
+        .h_iframe-aparat_embed_frame iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* دکمه‌های سایت با استایل نئوبروتالیسم */
         .btn {
             display: inline-block;
-            background: #ff0055;
-            color: #fff;
+            background: #feca57;
+            color: #000;
             padding: 10px 25px;
             text-decoration: none;
             font-weight: bold;
             font-size: 1.1rem;
             border: 3px solid #000;
-            box-shadow: 6px 6px 0px #000;
-            border-radius: 12px;
-            transition: all 0.2s ease;
+            box-shadow: 5px 5px 0 #000;
+            border-radius: 10px;
+            transition: all 0.2s;
+            cursor: pointer;
+            margin-top: 10px;
         }
 
-        /* وقتی موس روی دکمه می‌رود */
         .btn:hover {
-            transform: translate(4px, 4px);
-            box-shadow: 2px 2px 0px #000;
-        }
-
-        /* کادر مخصوص ویدیوهای آپارات */
-        .aparat-box {
-            width: 100%;
-            border: 3px solid #000;
-            border-radius: 12px;
-            overflow: hidden;
-            margin: 20px 0;
-            background: #fff;
-        }
-
-        /* تنظیمات چیدمان برای گوشی و کامپیوتر */
-        .layout {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-        .main-content {
-            flex: 2;
-            min-width: 300px;
-        }
-        .sidebar {
-            flex: 1;
-            min-width: 250px;
+            transform: translate(-2px, -2px);
+            box-shadow: 7px 7px 0 #000;
+            background: #48dbfb;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- هدر سایت -->
-        <header class="glass-brutal-card" style="text-align: center;">
-            <h1>آموزش‌های تخصصی هوش مصنوعی</h1>
-            <p>یادگیری سریع، پرامپت‌نویسی حرفه‌ای و مقالات ویدیویی</p>
-        </header>
+    <!-- هدر سایت -->
+    <header class="glass-neo">
+        <h1>🤖 وبلاگ آموزش هوش مصنوعی</h1>
+        <p>جذاب‌ترین آموزش‌های هوش مصنوعی و ترفندهای کاربردی</p>
+    </header>
 
-        <div class="layout">
-            <!-- بخش اصلی: مقالات و ویدیوها -->
-            <div class="main-content">
-                <article class="glass-brutal-card">
-                    <h2>آموزش ساخت تصویر با هوش مصنوعی</h2>
-                    <p>در این مقاله یاد می‌گیریم چطور از ابزارهای هوش مصنوعی برای خلق تصاویر جذاب استفاده کنیم. ویدیوی آموزشی را در زیر تماشا کنید:</p>
-                    
-                    <!-- جایگاه ویدیوی آپارات -->
-                    <div class="aparat-box">
-                        <div style="padding: 40px; text-align: center; color: #555;">
-                            <em>(اینجا بعداً کد امبد ویدیوی آپارات شما قرار می‌گیرد)</em>
-                        </div>
-                    </div>
-                    
-                    <a href="#" class="btn">خواندن ادامه مقاله</a>
-                </article>
+    <main>
+        <!-- نمونه مقاله اول با ویدیوی آپارات -->
+        <article class="glass-neo post">
+            <h2 class="post-title">یادگیری ماشین به زبان ساده</h2>
+            <div class="post-date">جدیدترین مقاله</div>
+            <p>در این ویدیو به شما آموزش می‌دهم که چطور ابزارهای هوش مصنوعی می‌توانند سرعت تولید محتوای شما را چندین برابر کنند. حتماً ویدیو را ببینید:</p>
+            
+            <!-- جایگاه قرار دادن کد امبد آپارات -->
+            <div class="aparat-container">
+                <style>.h_iframe-aparat_embed_frame{position:relative;}.h_iframe-aparat_embed_frame .ratio{display:block;width:100%;height:auto;}.h_iframe-aparat_embed_frame iframe{position:absolute;top:0;left:0;width:100%;height:100%;}</style>
+                <div class="h_iframe-aparat_embed_frame">
+                    <span style="display: block;padding-top: 57%"></span>
+                    <!-- من یک ویدیوی آموزشی سمپل گذاشتم که بعدا ویدیوی خودت رو جاش میذاریم -->
+                    <iframe src="https://www.aparat.com/video/video/embed/videohash/c8k2m/vt/frame" allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+                </div>
             </div>
 
-            <!-- سایدبار: مخصوص تبلیغات تپسل -->
-            <div class="sidebar">
-                <aside class="glass-brutal-card" style="background: rgba(255, 230, 0, 0.35);">
-                    <h3 style="margin-top:0;">جایگاه تبلیغات</h3>
-                    <p>این بخش با دقت برای سئو و درآمدزایی طراحی شده است.</p>
-                    
-                    <!-- جایگاه تپسل -->
-                    <div style="height: 250px; border: 3px dashed #000; border-radius: 15px; display: flex; align-items: center; justify-content: center; font-weight: bold; background: rgba(255,255,255,0.5);">
-                        جایگاه اسکریپت تبلیغ تپسل
-                    </div>
-                </aside>
-            </div>
-        </div>
-    </div>
+            <a href="#" class="btn">خواندن ادامه مقاله</a>
+        </article>
+
+        <!-- نمونه مقاله دوم (فقط متن) -->
+         <article class="glass-neo post">
+            <h2 class="post-title">چگونه پرامپت‌های بهتری بنویسیم؟</h2>
+            <div class="post-date">آموزش متنی</div>
+            <p>نوشتن پرامپت (دستور) دقیق برای هوش مصنوعی یک هنر است. در این مقاله ۵ تکنیک طلایی برای صحبت با ChatGPT را یاد می‌گیریم...</p>
+            <a href="#" class="btn">خواندن ادامه مقاله</a>
+        </article>
+    </main>
 
 </body>
 </html>
