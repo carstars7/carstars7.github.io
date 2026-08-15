@@ -3,146 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>آموزش‌های هوش مصنوعی | عظیمی</title>
+    <title>آموزش‌های هوش مصنوعی</title>
+    
     <style>
-        /* تنظیمات پایه سبک نئو بروتالیسم */
+        /* تنظیمات پس زمینه رنگارنگ برای دیده شدن افکت شیشه‌ای */
         body {
-            background-color: #f4f0eb; /* رنگ پس‌زمینه کرم ملایم برای تضاد بهتر */
-            font-family: 'Tahoma', sans-serif;
+            margin: 0;
+            font-family: Tahoma, 'Segoe UI', sans-serif;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #ffe66d, #845ec2);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
             color: #000;
-            margin: 0;
-            padding: 20px;
-            line-height: 1.8;
         }
-        
+
+        /* انیمیشن حرکت آرام پس‌زمینه */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* کادر اصلی سایت */
         .container {
-            max-width: 800px;
+            max-width: 1100px;
             margin: 0 auto;
+            padding: 30px 15px;
         }
 
-        /* هدر سایت */
-        header {
-            background-color: #ffde59; /* زرد جیغ */
-            border: 4px solid #000;
-            padding: 30px 20px;
-            text-align: center;
-            margin-bottom: 40px;
-            box-shadow: 8px 8px 0px #000; /* سایه سخت و تیز */
+        /* استایل ترکیب نئو بروتالیسم و لیکویید گلس */
+        .glass-brutal-card {
+            background: rgba(255, 255, 255, 0.25); /* شیشه نیمه شفاف */
+            backdrop-filter: blur(12px); /* افکت تاری شیشه اپل */
+            -webkit-backdrop-filter: blur(12px); /* برای پشتیبانی در سافاری */
+            border: 4px solid #000; /* حاشیه ضخیم بروتالیسم */
+            box-shadow: 12px 12px 0px #000; /* سایه تند و تیز بروتالیسم */
+            border-radius: 20px; /* گوشه‌های گرد آیفونی */
+            padding: 25px;
+            margin-bottom: 30px;
         }
-        
+
         header h1 {
-            margin: 0;
             font-size: 2.5rem;
-            font-weight: 900;
+            margin-top: 0;
+            text-shadow: 2px 2px 0 #fff; /* افکت متن */
         }
 
-        header p {
-            margin-top: 10px;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-
-        /* جایگاه تبلیغات (برای تپسل در آینده) */
-        .ad-space {
-            background-color: #ff914d; /* نارنجی نئونی */
-            border: 4px solid #000;
-            padding: 15px;
-            text-align: center;
+        /* دکمه‌های نئو بروتالیسم */
+        .btn {
+            display: inline-block;
+            background: #ff0055;
+            color: #fff;
+            padding: 10px 25px;
+            text-decoration: none;
             font-weight: bold;
             font-size: 1.1rem;
-            margin-bottom: 40px;
+            border: 3px solid #000;
             box-shadow: 6px 6px 0px #000;
+            border-radius: 12px;
+            transition: all 0.2s ease;
         }
 
-        /* کارت‌های مقالات */
-        .article-card {
-            background-color: #fff;
-            border: 4px solid #000;
-            padding: 25px;
-            margin-bottom: 40px;
-            box-shadow: 8px 8px 0px #000;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .article-card:hover {
-            transform: translate(-4px, -4px);
-            box-shadow: 12px 12px 0px #000;
-        }
-
-        .article-card h2 {
-            margin-top: 0;
-            font-size: 1.8rem;
-            border-bottom: 4px solid #000;
-            padding-bottom: 10px;
+        /* وقتی موس روی دکمه می‌رود */
+        .btn:hover {
+            transform: translate(4px, 4px);
+            box-shadow: 2px 2px 0px #000;
         }
 
         /* کادر مخصوص ویدیوهای آپارات */
-        .video-wrapper {
-            border: 4px solid #000;
-            margin-top: 20px;
-            background-color: #000;
-            /* این تنظیمات ویدیو را ریسپانسیو می‌کند */
-            position: relative;
-            padding-bottom: 56.25%; 
-            height: 0;
-            overflow: hidden;
-        }
-
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .aparat-box {
             width: 100%;
-            height: 100%;
-            border: none;
+            border: 3px solid #000;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 20px 0;
+            background: #fff;
         }
 
-        /* فوتر سایت */
-        footer {
-            text-align: center;
-            margin-top: 60px;
-            padding: 20px;
-            font-weight: bold;
-            background-color: #c1ff72; /* سبز نئونی */
-            border: 4px solid #000;
-            box-shadow: 6px 6px 0px #000;
+        /* تنظیمات چیدمان برای گوشی و کامپیوتر */
+        .layout {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .main-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        
-        <!-- بخش هدر -->
-        <header>
-            <h1>هوش مصنوعی و تولید محتوا</h1>
-            <p>یادگیری قدم به قدم ابزارهای جدید</p>
+        <!-- هدر سایت -->
+        <header class="glass-brutal-card" style="text-align: center;">
+            <h1>آموزش‌های تخصصی هوش مصنوعی</h1>
+            <p>یادگیری سریع، پرامپت‌نویسی حرفه‌ای و مقالات ویدیویی</p>
         </header>
 
-        <!-- جایگاه تبلیغات -->
-        <div class="ad-space">
-            [ جایگاه تبلیغات شما - کدهای تپسل اینجا قرار می‌گیرند ]
+        <div class="layout">
+            <!-- بخش اصلی: مقالات و ویدیوها -->
+            <div class="main-content">
+                <article class="glass-brutal-card">
+                    <h2>آموزش ساخت تصویر با هوش مصنوعی</h2>
+                    <p>در این مقاله یاد می‌گیریم چطور از ابزارهای هوش مصنوعی برای خلق تصاویر جذاب استفاده کنیم. ویدیوی آموزشی را در زیر تماشا کنید:</p>
+                    
+                    <!-- جایگاه ویدیوی آپارات -->
+                    <div class="aparat-box">
+                        <div style="padding: 40px; text-align: center; color: #555;">
+                            <em>(اینجا بعداً کد امبد ویدیوی آپارات شما قرار می‌گیرد)</em>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="btn">خواندن ادامه مقاله</a>
+                </article>
+            </div>
+
+            <!-- سایدبار: مخصوص تبلیغات تپسل -->
+            <div class="sidebar">
+                <aside class="glass-brutal-card" style="background: rgba(255, 230, 0, 0.35);">
+                    <h3 style="margin-top:0;">جایگاه تبلیغات</h3>
+                    <p>این بخش با دقت برای سئو و درآمدزایی طراحی شده است.</p>
+                    
+                    <!-- جایگاه تپسل -->
+                    <div style="height: 250px; border: 3px dashed #000; border-radius: 15px; display: flex; align-items: center; justify-content: center; font-weight: bold; background: rgba(255,255,255,0.5);">
+                        جایگاه اسکریپت تبلیغ تپسل
+                    </div>
+                </aside>
+            </div>
         </div>
-
-        <!-- بخش مقالات و ویدیوها -->
-        <main>
-            <article class="article-card">
-                <h2>معرفی بهترین ابزارهای هوش مصنوعی</h2>
-                <p>در این مقاله به بررسی ابزارهایی می‌پردازیم که می‌توانند سرعت تولید محتوا را چند برابر کنند. در ویدیوی زیر که در آپارات منتشر کرده‌ام، محیط کاربری یکی از این ابزارها را کامل توضیح داده‌ام:</p>
-                
-                <!-- کادر ویدیوی آپارات -->
-                <div class="video-wrapper">
-                    <!-- به جای این خط، کدی که آپارات برای امبد می‌دهد را می‌گذاریم -->
-                    <iframe src="https://www.aparat.com/video/video/embed/videohash/YOUR_VIDEO_HASH/vt/frame" allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
-                </div>
-            </article>
-        </main>
-
-        <!-- بخش فوتر -->
-        <footer>
-            <p>تمامی حقوق برای وبلاگ عظیمی محفوظ است.</p>
-        </footer>
-
     </div>
 
 </body>
