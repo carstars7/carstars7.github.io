@@ -5,17 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title | default: "کاراستارز | آموزش هوش مصنوعی" }}</title>
     
-    <!-- قرار دادن لوگو روی زبانه مرورگر (Favicon) -->
-    <link rel="icon" type="image/jpeg" href="https://www.blogsky.com/images/logo/carstars-96x96.jpg">
+    <!-- خواندن فاوآیکون به صورت مستقیم از سرور گیت‌هاب خودت -->
+    <link rel="icon" type="image/jpeg" href="/logo.jpg">
     
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.0/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            /* تم رنگی جدید بر اساس لوگوی شما */
-            --primary: #f97316; /* نارنجی جذاب */
-            --secondary: #eab308; /* زرد لوگو */
+            var(--primary): #f97316;
+            var(--secondary): #eab308;
+            --primary: #f97316; 
+            --secondary: #eab308; 
             --bg-color: #f0f2f5;
             --card-bg: #ffffff;
             --text-main: #333333;
@@ -35,7 +36,6 @@
         .site-title { 
             text-decoration: none; color: #222; font-weight: 800; font-size: 24px; display: flex; align-items: center; gap: 12px; 
         }
-        /* استایل لوگوی بالای سایت */
         .site-title img {
             width: 45px; height: 45px; border-radius: 50%;
             border: 2px solid var(--secondary); box-shadow: 0 2px 8px rgba(249, 115, 22, 0.2);
@@ -79,8 +79,8 @@
     <header>
         <div class="header-inner">
             <a href="/" class="site-title">
-                <!-- لوگو در بالای سایت -->
-                <img src="https://www.blogsky.com/images/logo/carstars-96x96.jpg" alt="لوگو کاراستارز">
+                <!-- خواندن عکس از سرور خودمان -->
+                <img src="/logo.jpg" alt="لوگو کاراستارز">
                 کاراستارز | <span>هوش مصنوعی</span>
             </a>
             <nav>
@@ -96,7 +96,8 @@
 
         <aside class="sidebar">
             <div class="card author-box">
-                <img src="https://www.blogsky.com/images/logo/carstars-96x96.jpg" alt="محمد صدرا">
+                <!-- خواندن عکس از سرور خودمان -->
+                <img src="/logo.jpg" alt="محمد صدرا">
                 <h3>محمد صدرا</h3>
                 <p>با آموزش‌های ساده، به‌روز و کاربردی، مهارت‌های دیجیتال و هوش مصنوعی رو یاد بگیر و در دنیای تکنولوژی حرفه‌ای شو!</p>
                 
