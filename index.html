@@ -1,51 +1,124 @@
 ---
 layout: default
-title: صفحه اصلی
+title: کاراستارز | صفحه اصلی
 ---
 <style>
-    .page-title {
-        margin-bottom: 30px;
-        font-size: 28px;
-        border-bottom: 2px solid #f0f0f0;
-        padding-bottom: 10px;
+    .page-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 25px;
+        font-size: 24px;
+        color: #222;
+        font-weight: 800;
     }
+    .page-header i { color: #ff6b6b; }
+    
     .post-card {
         background: #fff;
-        border: 1px solid #eee;
-        border-radius: 12px;
+        border: 1px solid #f0f0f0;
+        border-radius: 14px;
         padding: 25px;
-        margin-bottom: 20px;
-        transition: transform 0.2s, box-shadow 0.2s;
-        border-right: 4px solid #fff;
+        margin-bottom: 25px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+    /* یک نوار رنگی زیبا کنار کارت مقالات */
+    .post-card::before {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 4px;
+        height: 100%;
+        background: #0056b3;
+        transition: all 0.3s ease;
     }
     .post-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-        border-right-color: #0056b3; /* خط رنگی کنار کارت هنگام هاور */
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.06);
     }
+    .post-card:hover::before {
+        width: 6px;
+        background: #ff6b6b;
+    }
+    
     .post-card h2 {
-        margin: 0 0 10px 0;
+        margin: 0 0 15px 0;
         font-size: 22px;
+        line-height: 1.6;
     }
     .post-card h2 a {
-        color: #222;
+        color: #111;
+        text-decoration: none;
     }
     .post-card h2 a:hover {
         color: #0056b3;
     }
-    .post-date {
+    
+    /* اطلاعات زیر تیتر مقاله */
+    .post-meta {
+        display: flex;
+        gap: 20px;
         font-size: 13px;
-        color: #888;
+        color: #777;
+        margin-bottom: 15px;
+        flex-wrap: wrap;
+    }
+    .post-meta div {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    .post-meta i { color: #aaa; }
+    
+    .post-excerpt {
+        font-size: 15px;
+        color: #555;
+        margin-bottom: 20px;
+        text-align: justify;
+    }
+    
+    /* دکمه ادامه مطلب */
+    .read-more {
+        display: inline-block;
+        background: #f0f4f8;
+        color: #0056b3;
+        padding: 8px 20px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: all 0.2s;
+    }
+    .read-more:hover {
+        background: #0056b3;
+        color: #fff;
     }
 </style>
 
-<h1 class="page-title">آخرین مقالات</h1>
+<div class="page-header">
+    <i class="fa-solid fa-fire-flame-curved"></i> جدیدترین یادداشت‌ها
+</div>
 
 <div class="post-list">
   {% for post in site.posts %}
     <div class="post-card">
       <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      <div class="post-date">📅 تاریخ انتشار: {{ post.date | date: "%Y-%m-%d" }}</div>
+      
+      <div class="post-meta">
+          <div><i class="fa-regular fa-calendar"></i> {{ post.date | date: "%Y-%m-%d" }}</div>
+          <div><i class="fa-regular fa-user"></i> محمد صدرا</div>
+          <div><i class="fa-solid fa-folder-open"></i> هوش مصنوعی</div>
+      </div>
+      
+      <div class="post-excerpt">
+          <!-- این بخش قسمتی از متن مقاله را به عنوان خلاصه نمایش می‌دهد -->
+          {{ post.excerpt | strip_html | truncatewords: 35 }}
+      </div>
+      
+      <a href="{{ post.url }}" class="read-more">ادامه مطلب <i class="fa-solid fa-arrow-left" style="margin-right: 5px; font-size: 12px;"></i></a>
     </div>
   {% endfor %}
 </div>
