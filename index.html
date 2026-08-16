@@ -12,7 +12,7 @@ title: کاراستارز | صفحه اصلی
         color: #222;
         font-weight: 800;
     }
-    .page-header i { color: #ff6b6b; }
+    .page-header i { color: var(--primary); }
     
     .post-card {
         background: #fff;
@@ -24,67 +24,30 @@ title: کاراستارز | صفحه اصلی
         position: relative;
         overflow: hidden;
     }
-    /* یک نوار رنگی زیبا کنار کارت مقالات */
+    
+    /* نوار کناری مقالات حالا زرد است و با هاور شدن نارنجی می‌شود */
     .post-card::before {
-        content: '';
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 4px;
-        height: 100%;
-        background: #0056b3;
-        transition: all 0.3s ease;
+        content: ''; position: absolute; right: 0; top: 0; width: 4px; height: 100%;
+        background: var(--secondary); transition: all 0.3s ease;
     }
-    .post-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-    }
-    .post-card:hover::before {
-        width: 6px;
-        background: #ff6b6b;
-    }
+    .post-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(249, 115, 22, 0.08); }
+    .post-card:hover::before { width: 6px; background: var(--primary); }
     
-    .post-card h2 {
-        margin: 0 0 15px 0;
-        font-size: 22px;
-        line-height: 1.6;
-    }
-    .post-card h2 a {
-        color: #111;
-        text-decoration: none;
-    }
-    .post-card h2 a:hover {
-        color: #0056b3;
-    }
+    .post-card h2 { margin: 0 0 15px 0; font-size: 22px; line-height: 1.6; }
+    .post-card h2 a { color: #111; text-decoration: none; transition: color 0.2s;}
+    .post-card h2 a:hover { color: var(--primary); }
     
-    /* اطلاعات زیر تیتر مقاله */
-    .post-meta {
-        display: flex;
-        gap: 20px;
-        font-size: 13px;
-        color: #777;
-        margin-bottom: 15px;
-        flex-wrap: wrap;
-    }
-    .post-meta div {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-    }
-    .post-meta i { color: #aaa; }
+    .post-meta { display: flex; gap: 20px; font-size: 13px; color: #777; margin-bottom: 15px; flex-wrap: wrap; }
+    .post-meta div { display: flex; align-items: center; gap: 6px; }
+    .post-meta i { color: #bbb; }
     
-    .post-excerpt {
-        font-size: 15px;
-        color: #555;
-        margin-bottom: 20px;
-        text-align: justify;
-    }
+    .post-excerpt { font-size: 15px; color: #555; margin-bottom: 20px; text-align: justify; }
     
-    /* دکمه ادامه مطلب */
+    /* دکمه ادامه مطلب سازگار با تم نارنجی */
     .read-more {
         display: inline-block;
-        background: #f0f4f8;
-        color: #0056b3;
+        background: #fff5eb;
+        color: #c2410c;
         padding: 8px 20px;
         border-radius: 8px;
         font-size: 14px;
@@ -92,10 +55,7 @@ title: کاراستارز | صفحه اصلی
         text-decoration: none;
         transition: all 0.2s;
     }
-    .read-more:hover {
-        background: #0056b3;
-        color: #fff;
-    }
+    .read-more:hover { background: var(--primary); color: #fff; }
 </style>
 
 <div class="page-header">
@@ -114,7 +74,6 @@ title: کاراستارز | صفحه اصلی
       </div>
       
       <div class="post-excerpt">
-          <!-- این بخش قسمتی از متن مقاله را به عنوان خلاصه نمایش می‌دهد -->
           {{ post.excerpt | strip_html | truncatewords: 35 }}
       </div>
       
