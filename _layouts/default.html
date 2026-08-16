@@ -3,31 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title | default: "سایت آموزش هوش مصنوعی من" }}</title>
+    <title>{{ page.title | default: "سایت آموزش هوش مصنوعی" }}</title>
+    <!-- فونت زیبای وزیرمتن -->
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.0/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
     <style>
-        body { font-family: 'Vazirmatn', sans-serif; background-color: #f7f7f7; color: #333; line-height: 1.9; margin: 0; padding: 0; }
-        header { background-color: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); padding: 20px; text-align: center; }
-        header a { text-decoration: none; color: #222; font-weight: 700; font-size: 24px; }
-        .container { max-width: 800px; margin: 40px auto; background: #fff; padding: 40px 50px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
-        img { max-width: 100%; height: auto; border-radius: 8px; margin: 20px 0; }
-        h1 { font-size: 32px; color: #111; margin-bottom: 10px; line-height: 1.4; }
-        .meta { color: #777; font-size: 14px; margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
-        .content { font-size: 18px; }
-        .post-list { list-style: none; padding: 0; }
-        .post-list li { margin-bottom: 20px; border-bottom: 1px solid #f0f0f0; padding-bottom: 20px; }
-        .post-list a { text-decoration: none; color: #0056b3; font-size: 22px; font-weight: bold; }
-        .post-list a:hover { color: #cc0000; }
-        .post-date { display: block; color: #999; font-size: 14px; margin-top: 5px; }
-        @media (max-width: 768px) { .container { margin: 15px; padding: 20px; } h1 { font-size: 24px; } .content { font-size: 16px; } }
+        :root {
+            --primary-color: #0056b3;
+            --text-color: #333333;
+            --bg-color: #f4f6f8;
+            --card-bg: #ffffff;
+        }
+        body { 
+            font-family: 'Vazirmatn', sans-serif; 
+            background-color: var(--bg-color); 
+            color: var(--text-color); 
+            line-height: 1.9; 
+            margin: 0; 
+            padding: 0; 
+            -webkit-font-smoothing: antialiased;
+        }
+        /* استایل هدر سایت */
+        header { 
+            background-color: var(--card-bg); 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+            padding: 15px 0; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000;
+        }
+        .header-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .site-title { 
+            text-decoration: none; 
+            color: #111; 
+            font-weight: 800; 
+            font-size: 22px; 
+        }
+        .site-title span { color: var(--primary-color); }
+        
+        /* کانتینر اصلی */
+        .container { 
+            max-width: 850px; 
+            margin: 40px auto; 
+            padding: 0 20px;
+        }
+        
+        /* ظاهر محتوای مقاله (باکس سفید) */
+        .main-content {
+            background: var(--card-bg); 
+            padding: 45px 55px; 
+            border-radius: 16px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+        }
+        
+        /* تیترها و متون */
+        h1, h2, h3 { color: #111; line-height: 1.5; font-weight: 800;}
+        h1 { font-size: 32px; margin-top: 0; margin-bottom: 15px;}
+        p { font-size: 18px; margin-bottom: 25px; text-align: justify; }
+        
+        /* تصاویر */
+        img { max-width: 100%; height: auto; border-radius: 12px; margin: 25px 0; box-shadow: 0 5px 15px rgba(0,0,0,0.08); display: block; }
+        
+        /* متا دیتا (نویسنده، تاریخ و...) */
+        .meta { 
+            background: #f8f9fa; 
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 8px;
+            color: #666; 
+            font-size: 14px; 
+            margin-bottom: 30px; 
+            border: 1px solid #eee;
+        }
+        
+        /* لینک‌ها */
+        a { color: var(--primary-color); text-decoration: none; transition: all 0.3s ease; }
+        a:hover { color: #cc0000; }
+        
+        /* فوتر سایت */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #888;
+            font-size: 14px;
+            margin-top: 50px;
+        }
+        
+        /* ریسپانسیو برای موبایل */
+        @media (max-width: 768px) { 
+            .main-content { padding: 25px 20px; border-radius: 12px; } 
+            h1 { font-size: 26px; } 
+            p { font-size: 16px; } 
+        }
     </style>
 </head>
 <body>
     <header>
-        <a href="/">آموزش هوش مصنوعی</a>
+        <div class="header-inner">
+            <a href="/" class="site-title">آموزش <span>هوش مصنوعی</span></a>
+        </div>
     </header>
+    
     <div class="container">
-        {{ content }}
+        <div class="main-content">
+            {{ content }}
+        </div>
     </div>
+    
+    <footer>
+        تمامی حقوق برای سایت آموزش هوش مصنوعی محفوظ است.
+    </footer>
 </body>
 </html>
