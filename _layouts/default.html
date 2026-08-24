@@ -5,16 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title | default: "کاراستارز | آموزش هوش مصنوعی" }}</title>
     
-    <!-- خواندن فاوآیکون به صورت مستقیم از سرور گیت‌هاب خودت -->
     <link rel="icon" type="image/jpeg" href="/logo.jpg">
-    
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.0/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- کد اسکریپت کلی مدیااد (تپسل) - اینجا اضافه شد -->
+    <script type="text/javascript">
+        (function (){
+          const head = document.getElementsByTagName("head")[0];
+          const script = document.createElement("script");
+          script.type = "text/javascript";
+          script.async = true;
+          script.src = "https://s1.mediaad.org/serve/carstars7.github.io/loader.js";
+          head.appendChild(script);
+        })();
+    </script>
+    
     <style>
         :root {
-            var(--primary): #f97316;
-            var(--secondary): #eab308;
             --primary: #f97316; 
             --secondary: #eab308; 
             --bg-color: #f0f2f5;
@@ -33,13 +41,8 @@
         }
         .header-inner { max-width: 1100px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
         
-        .site-title { 
-            text-decoration: none; color: #222; font-weight: 800; font-size: 24px; display: flex; align-items: center; gap: 12px; 
-        }
-        .site-title img {
-            width: 45px; height: 45px; border-radius: 50%;
-            border: 2px solid var(--secondary); box-shadow: 0 2px 8px rgba(249, 115, 22, 0.2);
-        }
+        .site-title { text-decoration: none; color: #222; font-weight: 800; font-size: 24px; display: flex; align-items: center; gap: 12px; }
+        .site-title img { width: 45px; height: 45px; border-radius: 50%; border: 2px solid var(--secondary); box-shadow: 0 2px 8px rgba(249, 115, 22, 0.2); }
         .site-title span { color: var(--primary); }
         
         nav a { color: #555; text-decoration: none; margin-right: 20px; font-weight: 600; transition: color 0.3s; }
@@ -78,14 +81,8 @@
 <body>
     <header>
         <div class="header-inner">
-            <a href="/" class="site-title">
-                <!-- خواندن عکس از سرور خودمان -->
-                <img src="/logo.jpg" alt="لوگو کاراستارز">
-                کاراستارز | <span>هوش مصنوعی</span>
-            </a>
-            <nav>
-                <a href="/"><i class="fa-solid fa-home"></i> خانه</a>
-            </nav>
+            <a href="/" class="site-title"><img src="/logo.jpg" alt="لوگو کاراستارز"> کاراستارز | <span>هوش مصنوعی</span></a>
+            <nav><a href="/"><i class="fa-solid fa-home"></i> خانه</a></nav>
         </div>
     </header>
     
@@ -96,31 +93,26 @@
 
         <aside class="sidebar">
             <div class="card author-box">
-                <!-- خواندن عکس از سرور خودمان -->
                 <img src="/logo.jpg" alt="محمد صدرا">
                 <h3>محمد صدرا</h3>
                 <p>با آموزش‌های ساده، به‌روز و کاربردی، مهارت‌های دیجیتال و هوش مصنوعی رو یاد بگیر و در دنیای تکنولوژی حرفه‌ای شو!</p>
-                
                 <div class="social-links">
-                    <a href="https://aparat.com/car_stars_7" title="آپارات"><i class="fa-solid fa-video"></i></a>
-                    <a href="https://youtube.com/@car_stars_7" title="یوتیوب"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="https://t.me/car_stars_7" title="تلگرام"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="https://aparat.com/car_stars_7"><i class="fa-solid fa-video"></i></a>
+                    <a href="https://youtube.com/@car_stars_7"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://t.me/car_stars_7"><i class="fa-brands fa-telegram"></i></a>
                 </div>
             </div>
 
             <div class="card">
                 <div class="sidebar-title"><i class="fa-solid fa-tags"></i> برچسب‌های پرطرفدار</div>
                 <div class="tag-cloud">
-                    <span>هوش مصنوعی</span>
-                    <span>اندروید ۱۷</span>
-                    <span>ChatGPT</span>
-                    <span>ترفند دیجیتال</span>
+                    <span>هوش مصنوعی</span><span>اندروید ۱۷</span><span>ChatGPT</span><span>ترفند دیجیتال</span>
                 </div>
             </div>
             
             <div class="card">
-                <div class="sidebar-title"><i class="fa-solid fa-bullhorn"></i> تبلیغات</div>
-                <p style="font-size: 13px; color: #777; text-align: center;">کد تبلیغاتی تپسل به زودی اینجا قرار می‌گیرد</p>
+                <!-- جایگاه تبلیغ بنری سایدبار -->
+                <div id="mediaad-EgB0j"></div>
             </div>
         </aside>
     </div>
@@ -128,5 +120,9 @@
     <footer>
         <i class="fa-solid fa-heart" style="color: var(--primary);"></i> ساخته شده با افتخار برای کاراستارز بر بستر گیت‌هاب
     </footer>
+
+    <!-- جایگاه بنر چسبان پایین صفحه (مخصوص موبایل) -->
+    <div id="mediaad-RlBM7"></div>
+
 </body>
 </html>
