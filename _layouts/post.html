@@ -2,83 +2,35 @@
 layout: default
 ---
 <style>
-    /* این کدها متن مقاله را داخل یک باکس سفید و شیک قرار می‌دهند */
-    .post-box {
-        background: #ffffff;
-        border-radius: 16px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.03);
-        padding: 40px;
-        border: 1px solid #eaeaea;
-    }
-    .post-title-main {
-        margin-top: 0;
-        font-size: 32px;
-        color: #111;
-        line-height: 1.5;
-        margin-bottom: 15px;
-    }
-    .post-meta-main {
-        display: flex;
-        gap: 20px;
-        font-size: 14px;
-        color: #777;
-        margin-bottom: 30px;
-        padding-bottom: 15px;
-        border-bottom: 1px solid #eee;
-        flex-wrap: wrap;
-    }
+    .post-box { background: #ffffff; border-radius: 16px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); padding: 40px; border: 1px solid #eaeaea; }
+    .post-title-main { margin-top: 0; font-size: 32px; color: #111; line-height: 1.5; margin-bottom: 15px; }
+    .post-meta-main { display: flex; gap: 20px; font-size: 14px; color: #777; margin-bottom: 30px; padding-bottom: 15px; border-bottom: 1px solid #eee; flex-wrap: wrap; }
     .post-meta-main i { color: var(--primary); }
     
-    .post-content-main {
-        font-size: 17px;
-        line-height: 1.9;
-        color: #333;
-        text-align: justify;
-    }
-    .post-content-main img {
-        max-width: 100%;
-        border-radius: 12px;
-        margin: 20px 0;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    }
+    .post-content-main { font-size: 17px; line-height: 1.9; color: #333; text-align: justify; }
+    .post-content-main img { max-width: 100%; border-radius: 12px; margin: 20px 0; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
     
-    /* یک جایگاه تبلیغاتی جذاب مخصوص انتهای مقالات */
-    .post-footer-ad {
-        margin-top: 40px;
-        background: #fff5eb;
-        border: 2px dashed #f97316;
-        padding: 20px;
-        text-align: center;
-        border-radius: 12px;
-        color: #c2410c;
-        font-weight: bold;
-    }
+    /* تنظیمات باکس مدیااد پایین مقاله */
+    .post-footer-ad { margin-top: 40px; }
     
-    /* تنظیم برای موبایل */
-    @media (max-width: 768px) {
-        .post-box { padding: 25px 20px; }
-        .post-title-main { font-size: 24px; }
-    }
+    @media (max-width: 768px) { .post-box { padding: 25px 20px; } .post-title-main { font-size: 24px; } }
 </style>
 
 <article class="post-box">
-    <!-- تیتر مقاله -->
     <h1 class="post-title-main">{{ page.title }}</h1>
     
-    <!-- اطلاعات زیر تیتر مقاله -->
     <div class="post-meta-main">
         <span><i class="fa-regular fa-calendar"></i> تاریخ: {{ page.date | date: "%Y-%m-%d" }}</span>
         <span><i class="fa-regular fa-user"></i> نویسنده: محمد صدرا</span>
         <span><i class="fa-solid fa-folder-open"></i> دسته: هوش مصنوعی</span>
     </div>
     
-    <!-- متن اصلی مقاله -->
     <div class="post-content-main">
         {{ content }}
     </div>
 
-    <!-- جایگاه تبلیغات تپسل در انتهای مقاله -->
+    <!-- جایگاه تبلیغات همسان انتهای مقاله -->
     <div class="post-footer-ad">
-        <i class="fa-solid fa-bullhorn"></i> جایگاه تبلیغات تپسل در انتهای مقاله
+        <div id="mediaad-4510X"></div>
     </div>
 </article>
