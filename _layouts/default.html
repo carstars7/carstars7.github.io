@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <meta name="google-site-verification" content="PYXn9t45sanThb2aLx0SCVAMLN1GLoAuCIVJXpo0bOA" />
+    
     <title>{{ page.title | default: "کاراستارز | آموزش هوش مصنوعی" }}</title>
     
     <link rel="icon" type="image/jpeg" href="/logo.jpg">
@@ -44,19 +45,18 @@
         .social-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
         .social-links a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #fff5eb; color: var(--primary); border-radius: 50%; text-decoration: none; transition: all 0.3s; }
         .social-links a:hover { background: var(--primary); color: white; transform: translateY(-3px); }
-        
-        /* استایل‌های باکس جستجو */
-        .search-form { display: flex; gap: 8px; }
-        .search-form input[type="text"] { flex: 1; padding: 12px 15px; border: 1px solid #e2e8f0; border-radius: 8px; font-family: 'Vazirmatn', sans-serif; font-size: 14px; outline: none; transition: all 0.3s; background: #f8fafc; }
-        .search-form input[type="text"]:focus { border-color: var(--primary); background: #fff; box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1); }
-        .search-form button { background: var(--primary); color: white; border: none; padding: 0 15px; border-radius: 8px; cursor: pointer; transition: 0.3s; font-size: 16px; }
-        .search-form button:hover { background: #ea580c; transform: translateY(-2px); }
-        
         .main-content h1 { font-size: 30px; color: #111; margin-top: 0;}
         .main-content p { font-size: 17px; text-align: justify; }
         .main-content img { max-width: 100%; height: auto; border-radius: 12px; margin: 20px 0; }
         footer { text-align: center; padding: 30px 20px; background: #fff; color: #888; border-top: 1px solid #eaeaea; font-size: 14px; }
         @media (max-width: 900px) { .wrapper { grid-template-columns: 1fr; } .header-inner { flex-direction: column; gap: 15px; } nav { margin-top: 10px; } nav a { margin: 0 10px; } }
+        
+        /* استایل‌های باکس جستجو */
+        .search-input { width: 100%; padding: 12px 15px; border: 1px solid #eaeaea; border-radius: 8px; font-family: 'Vazirmatn', sans-serif; font-size: 14px; box-sizing: border-box; background: #f9f9f9; transition: border 0.3s; }
+        .search-input:focus { outline: none; border-color: var(--primary); background: #fff; }
+        #results-container { list-style: none; padding: 0; margin-top: 10px; font-size: 14px; }
+        #results-container li { margin-bottom: 10px; border-bottom: 1px dashed #eee; padding-bottom: 10px; }
+        #results-container li a { color: var(--primary); text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -84,15 +84,13 @@
                 </div>
             </div>
 
-            <!-- باکس جستجوی جدید جایگزین برچسب‌ها شد -->
+            <!-- باکس جدید جستجو که جایگزین برچسب‌ها شد -->
             <div class="card">
-                <div class="sidebar-title"><i class="fa-solid fa-magnifying-glass"></i> جستجو در آموزش‌ها</div>
-                <form action="https://www.google.com/search" method="get" target="_blank" class="search-form">
-                    <!-- کلمه کلیدی مخفی برای محدود کردن سرچ به سایت شما -->
-                    <input type="hidden" name="as_sitesearch" value="carstars7.github.io">
-                    <input type="text" name="q" placeholder="چی می‌خوای یاد بگیری؟" required>
-                    <button type="submit"><i class="fa-solid fa-arrow-left"></i></button>
-                </form>
+                <div class="sidebar-title"><i class="fa-solid fa-magnifying-glass"></i> جستجو در سایت</div>
+                <div>
+                    <input type="text" id="search-input" class="search-input" placeholder="دنبال چه آموزشی هستی؟...">
+                    <ul id="results-container"></ul>
+                </div>
             </div>
             
             <div class="card">
@@ -107,5 +105,16 @@
 
     <div id="mediaad-RlBM7"></div>
 
+    <!-- اسکریپت موتور جستجوی سریع سایت -->
+    <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+    <script>
+        var sjs = SimpleJekyllSearch({
+            searchInput: document.getElementById('search-input'),
+            resultsContainer: document.getElementById('results-container'),
+            json: '/search.json',
+            searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+            noResultsText: '<li style="color: #777; font-size: 13px;">مقاله‌ای با این نام پیدا نشد!</li>'
+        })
+    </script>
 </body>
 </html>
