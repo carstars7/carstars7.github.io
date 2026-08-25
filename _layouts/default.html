@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta name="google-site-verification" content="PYXn9t45sanThb2aLx0SCVAMLN1GLoAuCIVJXpo0bOA" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="google-site-verification" content="PYXn9t45sanThb2aLx0SCVAMLN1GLoAuCIVJXpo0bOA" />
     <title>{{ page.title | default: "کاراستارز | آموزش هوش مصنوعی" }}</title>
     
     <link rel="icon" type="image/jpeg" href="/logo.jpg">
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.0/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- کد اسکریپت کلی مدیااد (تپسل) - اینجا اضافه شد -->
     <script type="text/javascript">
         (function (){
           const head = document.getElementsByTagName("head")[0];
@@ -23,66 +23,46 @@
     </script>
     
     <style>
-        :root {
-            --primary: #f97316; 
-            --secondary: #eab308; 
-            --bg-color: #f0f2f5;
-            --card-bg: #ffffff;
-            --text-main: #333333;
-        }
-        
+        :root { --primary: #f97316; --secondary: #eab308; --bg-color: #f0f2f5; --card-bg: #ffffff; --text-main: #333333; }
         body { font-family: 'Vazirmatn', sans-serif; background-color: var(--bg-color); color: var(--text-main); line-height: 1.8; margin: 0; padding: 0; }
-        
-        header { 
-            background: linear-gradient(to right, #ffffff, #fffcf5);
-            border-bottom: 3px solid var(--primary);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
-            padding: 12px 0; 
-            position: sticky; top: 0; z-index: 1000;
-        }
+        header { background: linear-gradient(to right, #ffffff, #fffcf5); border-bottom: 3px solid var(--primary); box-shadow: 0 4px 15px rgba(0,0,0,0.05); padding: 12px 0; position: sticky; top: 0; z-index: 1000; }
         .header-inner { max-width: 1100px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
-        
         .site-title { text-decoration: none; color: #222; font-weight: 800; font-size: 24px; display: flex; align-items: center; gap: 12px; }
         .site-title img { width: 45px; height: 45px; border-radius: 50%; border: 2px solid var(--secondary); box-shadow: 0 2px 8px rgba(249, 115, 22, 0.2); }
         .site-title span { color: var(--primary); }
-        
         nav a { color: #555; text-decoration: none; margin-right: 20px; font-weight: 600; transition: color 0.3s; }
         nav a:hover { color: var(--primary); }
-
         .wrapper { max-width: 1100px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: 3fr 1fr; gap: 30px; }
-        
         .card { background: var(--card-bg); border-radius: 16px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); padding: 30px; margin-bottom: 30px; border: 1px solid #eaeaea; }
-        
         .sidebar .card { padding: 25px 20px; }
         .sidebar-title { font-size: 18px; font-weight: bold; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; margin-bottom: 20px; color: #222; }
         .sidebar-title i { color: var(--primary); margin-left: 8px; }
-        
         .author-box { text-align: center; }
         .author-box img { width: 90px; height: 90px; border-radius: 50%; border: 3px solid var(--secondary); padding: 3px; margin-bottom: 15px;}
         .author-box h3 { margin: 0 0 5px 0; font-size: 18px; }
         .author-box p { font-size: 14px; color: #777; margin-bottom: 15px; line-height: 1.7;}
-        
         .social-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
         .social-links a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #fff5eb; color: var(--primary); border-radius: 50%; text-decoration: none; transition: all 0.3s; }
         .social-links a:hover { background: var(--primary); color: white; transform: translateY(-3px); }
         
-        .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
-        .tag-cloud span { background: #fff5eb; color: #c2410c; padding: 5px 12px; border-radius: 20px; font-size: 13px; font-weight: 600; cursor: pointer; transition: 0.3s; border: 1px solid #ffedd5;}
-        .tag-cloud span:hover { background: var(--primary); color: white;}
-
+        /* استایل‌های باکس جستجو */
+        .search-form { display: flex; gap: 8px; }
+        .search-form input[type="text"] { flex: 1; padding: 12px 15px; border: 1px solid #e2e8f0; border-radius: 8px; font-family: 'Vazirmatn', sans-serif; font-size: 14px; outline: none; transition: all 0.3s; background: #f8fafc; }
+        .search-form input[type="text"]:focus { border-color: var(--primary); background: #fff; box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1); }
+        .search-form button { background: var(--primary); color: white; border: none; padding: 0 15px; border-radius: 8px; cursor: pointer; transition: 0.3s; font-size: 16px; }
+        .search-form button:hover { background: #ea580c; transform: translateY(-2px); }
+        
         .main-content h1 { font-size: 30px; color: #111; margin-top: 0;}
         .main-content p { font-size: 17px; text-align: justify; }
         .main-content img { max-width: 100%; height: auto; border-radius: 12px; margin: 20px 0; }
-        
         footer { text-align: center; padding: 30px 20px; background: #fff; color: #888; border-top: 1px solid #eaeaea; font-size: 14px; }
-        
         @media (max-width: 900px) { .wrapper { grid-template-columns: 1fr; } .header-inner { flex-direction: column; gap: 15px; } nav { margin-top: 10px; } nav a { margin: 0 10px; } }
     </style>
 </head>
 <body>
     <header>
         <div class="header-inner">
-            <a href="/" class="site-title"><img src="/logo.jpg" alt="لوگو کاراستارز"> کاراستارز | <span>آموزش و ترفند های هوش مصنوعی</span></a>
+            <a href="/" class="site-title"><img src="/logo.jpg" alt="لوگو کاراستارز"> کاراستارز | <span>هوش مصنوعی</span></a>
             <nav><a href="/"><i class="fa-solid fa-home"></i> خانه</a></nav>
         </div>
     </header>
@@ -95,7 +75,7 @@
         <aside class="sidebar">
             <div class="card author-box">
                 <img src="/logo.jpg" alt="محمد صدرا">
-                <h3>کاراستارز</h3>
+                <h3>محمد صدرا</h3>
                 <p>با آموزش‌های ساده، به‌روز و کاربردی، مهارت‌های دیجیتال و هوش مصنوعی رو یاد بگیر و در دنیای تکنولوژی حرفه‌ای شو!</p>
                 <div class="social-links">
                     <a href="https://aparat.com/car_stars_7"><i class="fa-solid fa-video"></i></a>
@@ -104,15 +84,18 @@
                 </div>
             </div>
 
+            <!-- باکس جستجوی جدید جایگزین برچسب‌ها شد -->
             <div class="card">
-                <div class="sidebar-title"><i class="fa-solid fa-tags"></i> برچسب‌های پرطرفدار</div>
-                <div class="tag-cloud">
-                    <span>هوش مصنوعی</span><span>اندروید ۱۷</span><span>ChatGPT</span><span>ترفند دیجیتال</span>
-                </div>
+                <div class="sidebar-title"><i class="fa-solid fa-magnifying-glass"></i> جستجو در آموزش‌ها</div>
+                <form action="https://www.google.com/search" method="get" target="_blank" class="search-form">
+                    <!-- کلمه کلیدی مخفی برای محدود کردن سرچ به سایت شما -->
+                    <input type="hidden" name="as_sitesearch" value="carstars7.github.io">
+                    <input type="text" name="q" placeholder="چی می‌خوای یاد بگیری؟" required>
+                    <button type="submit"><i class="fa-solid fa-arrow-left"></i></button>
+                </form>
             </div>
             
             <div class="card">
-                <!-- جایگاه تبلیغ بنری سایدبار -->
                 <div id="mediaad-EgB0j"></div>
             </div>
         </aside>
@@ -122,7 +105,6 @@
         <i class="fa-solid fa-heart" style="color: var(--primary);"></i> ساخته شده با افتخار برای کاراستارز بر بستر گیت‌هاب
     </footer>
 
-    <!-- جایگاه بنر چسبان پایین صفحه (مخصوص موبایل) -->
     <div id="mediaad-RlBM7"></div>
 
 </body>
