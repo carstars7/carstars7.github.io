@@ -4,16 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- کد تایید مالکیت سایت برای گوگل -->
     <meta name="google-site-verification" content="PYXn9t45sanThb2aLx0SCVAMLN1GLoAuCIVJXpo0bOA" />
-    
     <title>{{ page.title | default: "کاراستارز | آموزش هوش مصنوعی" }}</title>
     
     <link rel="icon" type="image/jpeg" href="/logo.jpg">
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.0/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- اسکریپت تبلیغات تپسل -->
     <script type="text/javascript">
         (function (){
           const head = document.getElementsByTagName("head")[0];
@@ -46,7 +43,7 @@
         .author-box h3 { margin: 0 0 5px 0; font-size: 18px; }
         .author-box p { font-size: 14px; color: #777; margin-bottom: 20px; line-height: 1.7;}
         
-        /* استایل دکمه‌های شبکه‌های اجتماعی */
+        /* استایل شبکه‌های اجتماعی */
         .social-links { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
         .social-links a { 
             display: flex; align-items: center; justify-content: center; 
@@ -57,13 +54,26 @@
         }
         .social-links a:hover { background: var(--primary); color: white; transform: translateY(-3px); box-shadow: 0 4px 10px rgba(249, 115, 22, 0.3); }
         
+        /* تکنیک فوق پیشرفته CSS Masking برای تبدیل لوگوهای آپلودی شما به آیکون‌های رنگی */
+        .icon-mask { 
+            display: inline-block; width: 1.1em; height: 1.1em; background-color: currentColor; 
+            -webkit-mask-size: contain; mask-size: contain; 
+            -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; 
+            -webkit-mask-position: center; mask-position: center; 
+        }
+        .icon-aparat { -webkit-mask-image: url('data:image/webp;base64,UklGRoAFAABXRUJQVlA4WAoAAAAQAAAAPwAAPQAAQUxQSC0FAAAB8IZtnyFJ/v/dEYlqzMzatm3btm3btm3btm3bto2qjIiM60FlVed0777xLCImQP952qTdDhmTqTrLhojVBPPMNc/c80ymoWlsttMbtH++w+HDZCoHlXQn+JYHuDhVxyQZNNmw22g6B3/OPuZoGjHaqJW9UpIOjoaOo1nCs1tolnnmeJESoOStBReVciOldiTZZLqnfJNHDtcEe0YGeNyqkjWStcaMhFQbUfBkv277DO9c7BRdQevmGaS95pWkJDG1pZvxzXTKnoMiFoGuXeTHZ3onuPn7j7YeQ7VbTcLn02jRh2iW3kPhuyF6eKYvfQHC0ktOYExNs/wwg86BSAlHvAyxG4iOJ4ZnDxBgVWW1GI0+m86gFYGjl9T4y28Ksar03kc8LzX6HvZ/tV4aQ6YOyeoQ/qYs7hrfqCFpozLGtkC7w/FyzyH4yEdjyNRh7bB7vAckJbJpQ5v/4iME3rrzvrsCjoInJzrHx4InlNVg7Oh34yk53lpVZnqcQOD18SStfjIlTTYWMcSHarHJVDgIjK0OafIsoXTvT6CeNJcOI5TujbG3oODhWqT3fWybows9Q4DRlEjKenRk03sWmeDHmqwWbMWKsbpInsVzh6wqcz1OKNGWsZ5MrxKAyNmmQ6bHaTFep8w8SYhh0+3hkXruqwCkrK3XbPu798zZhX2KUPLB2A/yQA25DvIF7WXr0WFK87whXYsLTNSFHml7XtfHYRp4rmOpwnP/upK08hk4SnbLTIXNZn+3LGP56bR3o1qO7ESEy04//TQ6StbK2B6dRgscZy74R16HOaYLQgHgXQjB++bFkjJJi39RRHDxDM1kB5ZqmaKgYyxK59zf3DJsnP49+YsLZphR/TMs5omA4/RENaZagU4B8CWe65Vp9tdCADa5G4hUnKGeWpaLVTHy09YfQUWfmfXlEMoQIZRUtuV1pCtTEWNcdXJNMts2/B1vaiTZbrS8c7EIdKyrRwt+6yLEWKwmZZJ2JBStTb4sCgcEx8jSGjqIghi+X0uZkbGpdvwzUnn+eeeB7yKeVkOqPUiOjgUl7yhXpdWfxOC5fD1Jq5xE7MSFNeTJc0EnUYCfLTVVJluG0jevTtXIGzIzvIhvK+Mr4yVmYLqhnGa7n12kUGejBp6vZTNJaaaTXajgPWUaaJLM8SrP6HV8DJvKdrD7UZYHyarS6msiEIu9jR1QQ0fArVr27xj4QnkHleDVZfJtRRlVY67d/F9/bqavQoivpDZPJfXpwqbHj9WFKjyrZHZgDR3OH1w6xjS4UN7RI+V5pjFejwGvLtPviET37oSmhiRZ7IPQZNaehwiBm/dcR9KeT+GJ5TbGVhl9TaTJ5spVY0M3x6J8stF3vw8lcPPN90CEkq+UJFY2SXVAK1DwzMSJrSNLrqRV8nJ+EH/hC4AiAPg/T5eUS9qPgOPlnv5+1Wp0C60WTw8/DwfRe0914MQl59J0S+6FJ/Ba/6hXz2FsLVY3QcEDOpNA9xGaB34FEc+zo5mnd1SmWq3tWf5N4FWdDr7shuAA5z28MFx3s5WpSUYaY/xNP/v9Wo3/FBTdQCxKF/ntld6x7+H3DU1ak0yqjvkdn+Gdi124AnfPXDqKEC5QrvpNu2QSzXggAz1lLek4Qotb1BgJXebSfMss8Wqn1+ZfWNrsIbznqxmsHQyyuaT+saqTqUaM+ubPnhD4fnwN2iRJ1HF92kOzxceTKh00kkylNfvseS+Vn0+jVENzxEILLLTQggtPrkRDMs3VMdFQNUml1f8nAQBWUDggLAAAAHADAJ0BKkAAPgA+MRiLRCIhoREEACADBLSAAAgbqagCvELcgAD+/nyUAAAA'); }
+        .icon-filo { -webkit-mask-image: url('data:image/webp;base64,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'); }
+        .icon-rubika { -webkit-mask-image: url('data:image/webp;base64,UklGRhIEAABXRUJQVlA4WAoAAAAQAAAAPwAAPwAAQUxQSMADAAABoEZrmyFJer6IGKxt27Zt27Zt27btrrVt27bt7ZnAu8yM7jpnf0fEBGCOqa/r3NyFneumxhkGxz65+sh04cirP3USWPDXnjw8uC6EEXqu8IGTbwBvdKF5uOFkpnt+BO+obj6E4GqBCyM8P92Na+Gp7vlX52rhWevGzojOajlgniOOPGpOcK6SuRE7N+Oo6zy2yhOSlB+ZD5xVwXHzzVbHAsz9jJRjjJKunhNCHbv5ZqoEmPbipJT1zyTp+LEwX4M63jHKrj+qZP13Kvp6PwiuXziDPT6Topon6YnlwVufuQBLPyDForYlShfODMH6xAJMc7UUi2rmonTgyOD7wMNkZ/YqJ9WO0oe7D4d3lcwzzNbfSEl9WKL09IoQqhgs/rgUi1qWZlKJ0kVTYdbOMcbZUixqmbNSaSblrN93AGtjbtQXlbLaRukPKbaQonS+920CR6hXbVPRuyuNu8cQpdxCpVfbEpqZDfdNzi2ylPYfBZj+SimVZkr56QG+mWfFnNS4JOVrZwNvAVZ/VIrNitJEuEaBTRUbRen5pSAY4Bzs+rlK6qMNGuWib/Z2eMe/e2P0y6VU+mTDJkU6bhzwNA0wx81q2Ee5PD0XDDCam4d1Pymlf+jSzmzgrRk4x4NK/eQaxbOngWDN8P6xfnP1t9KQ/UcE38zxaP/5oUTp/e2Hw/lukUqSnlkCrGukEqV7FsZ1j5SztJD5LpJ6tTGhq2JZt9u03v+I4PvPFVXMw8P9RPou/TykjQWY4cKfS+kn0je/NzMPI5w1VA2rbNCo6L//xcPIu38gxUax3SaNpNLED2S4lT6QUlGjMnGrVXNq9N9RG8JyT0sxq3HRL+O2MEb6KZc6K8zzgJSKWkbdjqcRgaPUWyoUPdurlNU2Jy3ZCmfnqcTS6p9JbUuUNsbTxow9hkq5XS5qm6R3lsfRCjNmvHyoUm7TOhd9feBoeCpAgOnulWLpg5xUesYHTx2ch9Wfk2KtEqWXloRg1AJnDDrkG5VUo0Tp5fUC3mhYAbwx1fFZyq2S9NGeg8HRuAoEmLOnKOVGKeuHo8YBT8tKuACzPSrl8h85SedMCMGoYRXAefwGr0ixSMpJuml+CEZ7ZzffTBVwMGC376SUk/T2FuCMmo6bOyM6qwIexj36R0mvbzYM3lPV3IidG9fCVwIP4y+80MKDwVPZs+aN0z0/gne1MM8/g1HZhRFfnI6Tb8C8VQLnvTdqe+O6nQn+2lOGAdeFMOw1VxAMTrppxVHpwlFXvGV3zDDHtD2dm7uw0zMtDgBWUDggLAAAAHADAJ0BKkAAQAA+MRiLRCIhoREEACADBLSAAAgbqagCvELcgAD+/nyUAAAA'); }
+        .icon-eitaa { -webkit-mask-image: url('data:image/webp;base64,UklGRsQEAABXRUJQVlA4WAoAAAAQAAAAPwAAPwAAQUxQSHEEAAABsIVt2yFJ0hvxR+TYs7Zt27bHntbaGtu2bdtt99i2jezK+OP7v+cg0RF5NmcRMQG8Ou3WqI+Nx0jDMfo4OMCdp51x2jKfcdqdAKm1RLp/i60WbLvDtsu8w7YLttrifrCWErfue9OC62n4+nm3/HM6qRXj0H0BUhy56nYnYowxAQs2OQlroeKAPTCSM6LXESDWCdyB3Q6gasw4ZH8iI5sD9dFH3wDgQOqx/yFYQ8Z5e2GM6hU894sffVZa66c/uNJwAGOv87BGnN7lREY1WPD3FSWVpaTw6WcwgMjlT+CNxCnT3UZJPLZZKYUiSHlR5PrYczhgPv0OawT+jDPcE4s+qCxoxKBPPJQccPalSePc522UxKZSmWnk5fUven32+LnYskXWmUEa4sYkdTJJygZLyorX3uwJEjPWITYxdcEIddxYHUkqCg0uMiloAda3YGozk+YPSzymXFII0upr9K8mZQrZokHzJ7WU0mMf6eTKJP1uw66Z1fb8OqspBI2Jp5ffp6BS2S8vZMQlK6oYl8Q5Cgp6021GFYf0mPPGclyMt+dB2u0uqBmxy/8VFo9FxSHLd4KOBx5NPsRtgvVyzR3gc6e0keypL6kTTmcpk/7CKw5YjMA0hc8+bAmMGzdsw7hIZfYeKvbSG+ZCrCPw4pmfUbnc/lRQe9zoXrw50utDqSttKZODVjnmReDWI499r7SC3uIGTv3dVXFa4E3KfvpM3ePv2XLSR3/0vR+9TlJYXjrDE/XE3p/Xe6sWnBvXDPonVcWmKlWqv7NcLn3nLIzIPOk9Z/2V2FjkN1pJf/Aq+Zw355lCURRlkD51DBiO/0Rvf/DWTVvZUivqj6kicaJySVmQPnt5lzqRrPqR3nAvsya3splW1N/pWjpnxZBJmfSNw4AI7vYdvecu0oJJLXXCmhexlGnqKMv1rpkTxORQp/oH0mR6zG+rzJRf7A99Ow8KOgSIAIZ9X51fpjqNgUp91S5QqVz7UicH0lL2/IRW0EJvb1OVUlme99D7Q1j+YLq1mRmwi7S8DqmN1rYYoDOYmunNDJ/zG2Ud7U2iLei+XpkKbdXbU9nsx66eMX369Kunf6VUCFrzkWhtTF0wgNfkmSS9zB569CQNL4LWvA6jb8HUZtaZ0Weco0LKyx9PcGt1bLFC0Z8r16rXYwyYsU4TxrnPm0OyJz+hUgr6XoTjVWpgyNZaQkW/2/PnYssG/AkHEs9/XEHK9aFdHttjSKmVbsIYxJ9o1OMfF7oBiec+qrxQ0NA8SGstITLQfOEfozeRWLIOFYDxzKeDinK5XFJeltLKu99KzeDIOktITWDx+MM8ATh25Q814ps3exkSg+t6t+Mro1nnG89RAzhw0tE79n3kuCPuhmQMTsQLadzthn3B3YFUA4899vhjLwM1g92d68Aa63/hWKCOMcZudwIgdbu9OLgG9juISIte9475yeUP0/jDl//keIy2bdIFB2+13bYNbrfVwRdMMhJtO3DJaQ1fAjhjGI3GLTKm1jivSgMAVlA4ICwAAABwAwCdASpAAEAAPjEYi0QiIaERBAAgAwS0gAAIG6moArxC3IAA/v58lAAAAA=='); }
+        .icon-soroush { -webkit-mask-image: url('data:image/webp;base64,UklGRj4FAABXRUJQVlA4WAoAAAAQAAAAPwAAPgAAQUxQSOsEAAABsLVtmyHJ9oyeLyKqda3GLNu2ba9t27Zt27Z1tGzbtm17rc7Ae1CVmVGzI2ICqGs+8P/sAsDqLzz4byeefcG5xx93/PtfczCGs6XEeZjc6as3PCZJJ/zlxzvssNMOH36LHwDe2/jMwYY/vUbDt398ns5bLgG8jcnDJr97RtJi1ucXwA2Cc8559jjsAt1xygemwY/FM/WdZ6VYip7/CgRj2PzM4ZKKpDv+uAahnjl2ulpKRbncsslK3jHacbhiysopSTftiLNKBu+TUpEUy8vo6Nldi0UjS5TeB1bFscwJylmSov7KwLocpaT2nHXCMrgKxsyZShou+cmNnKPLSZ2kpDNncL3Mz56pRiOTTsPT7mydR0vppEZnLsH6eM5Uo5b4GuuCnzxbqZsW9fepYN08H1Gj0Vl3091zSu6j5/UjBp0Ce6kpLVE/ttAp8A4t9lEsexE6mJu9sWS1NvoSE51w7k9aLD2ybpx11ub5uZJaS252wXUzx58VSzcl/Rzf4m1bxdJBzy+LdcMcX5VStxK1rfkWjihRnVbpBcYHnlPspFiOYJRnu5jUbeUaE+x3nWInpWZH3KgjND6YYKNzFDtF/WdqGnDsXrKWAjwTJ6jpUspt28wbBH6u2GeVOgTWuFy5g5I+RgAXTlHqs3wlnIVjlbqUc6YdjvVjKd3K4qa4OniWPKPcVvTcLDbgY6VR90ZfYFAJb/s8n0uLYvM6woDPqd836uH5oVLboj7MBHatco+smx3VzXNVTi1Jh+Hgugp3hHoM7KtqWrLuMFjvoVJ6KMZ9CdXMrX59yW3XAC9VUi/9cQwEfqLYUu6Yh4NLv6QL8PWcW/+hUkYo6UVwiPopP7cLrhqOi5VaysFwcKkQ9XsLY7AjO+hF8FJVyLprxuoF3qQ4Ipc75mG9h0rppaT98WN4VWrRNQDXKfdr9FtCNWPqPpVRdxjYtTWy7howhsmWpMNwAz6npp9iPMDC+Bb1YSYGfKxU0e9ZCmLzOoJj/aaUfrnctpyzalOjip6bxXDhbKV+KtoOV83dOyKVs6cdBD5RJ29ZzXPQ80lD+hQBHBuUUkPbVAv2JkVJpdyzvBngwxFKvUp5ciOr5fn9iKj/ERhi+xh7pXw2nrrmFu4sWVJqdsAP4TlcsU/ULwmVPPspS4rlCDzD5lfY8aGYu+V060rmKoWJI0uSStK21sKq4WNqOpVGryBQ17GaVKSsn+Npd/xITW6LSR8nUHkw+4USpaI7Zp21mTl+KOWYck5NkT5CoLIfvPGpVKSkYwl0Nc9L71PrsXviqR04VFFSKU9sYK4LOJa85Ov/uOee07++D3hqBz6qpOGi7eiBBxgMAOeoPcGrlMqoslEvzA8ABp7qA9a6LSWNzHoNvg/GAgSjsvnAOrcqa3TUPwj9bO0fbQTBapgH3neXmpzbflsBY/3P/3Rl8N56OA8Tex8pLUrKKY34s1XA4DPnfGtlwIfgbDgEbzC3381SI11x0m2SlGIsDy/B+mHG7GdP/PIrZum+9Sdv0fCz75/Averk04okPbFcFQiw8IITrvzfJz6+7dTM9NTc2975i0ufk6R47IfWAwPY5LO/Ozdp+UrggbU+f/HjKiVnjX70+q9tMxcIhnnvADb/2CTVzTmAg176xROPP/HIw4/8+8EvXJ1hx2gXAuO24OgbnBldzQ1GAQBWUDggLAAAAHADAJ0BKkAAPwA+MRiLRCIhoREEACADBLSAAAgbqagCvELcgAD+/nyUAAAA'); }
+        .icon-bale { -webkit-mask-image: url('data:image/webp;base64,UklGRngEAABXRUJQVlA4WAoAAAAQAAAAPwAAPwAAQUxQSCYEAAABCbRt2waqNPb/h+v+ENH/CSCAYi4fSeXUD/W2rARlEGTbrP7izwkiInPLhlFs201uioUY6YkmrICBpgMRGGHPtlcNEROQtLZtMyTJC3q+iKi1bdu2bdu2bXuPxra1tm0bY9uujO87qMqMrOqImABGtWLWGCwqmVFffDTYfsWrZZd91aHu29+sy4K/QXw00p2RcRAwqVCVOuIz2OeYow/0FI9fvv/edxBiWstaaYedguOXwwM+svw1V+0EEBFXRw0P8EfXzotwSdZBALAD+69BJp6VLrt1K0zxpEacMLxVT/AJOwmvyP6HYXb5vVuROUe5qoHh5xGtmISPZ9XDNnjVyJyjfNWw1YkHEgr9SeTcCSebo7GqnLIGmZSCCCvSeKcWDxErB0yaALxVNsaV1LQZZtqiRKASWhIYE6tYi3JLPkVbEng32besKB98R2wyU0xiDsSBNLk6AC9WT8O0l502U/Qzv+y1ZLevcPVQnprnrHmqlYF3TAKeenpOnhvbw8XmqQw8n2DgmRmzOqh7caFrnsHnOSIQA/uvgdTxYwZI0+j5zoxaiavdiqvB5LIZTYNDqe+zDptmria6+z4pwZASRESN3JC9dF4WatT/2DZFM/Fk4lPMKJqFs14OGblbpgTPZLcO6cUiNywK1DeuSBl5+7g3wymnnqNSRBCKWph8HTEn+r4JIzsPo/aiPjGnimEUjnwxTrRApyKmqygVVbxUL+kldaqAkaqOovMKePY5BCK1leolGJDxEo7CgjisUFGh1xpRqF+pKpDxkqO4YUai5Um2Xgf15FcQTIbI+QmYYQlFszD43JDlAcZLcpEUEpwgpGpeDF9c7gspw5c5V7RQuebycFyymMLGNxlWwIiGpfEtmhN5e5TTIohg5AteENLnfY/lgAxDrAjRaHT0nZahoNFQNayUvp3V54E0QAShROOKBY7ChmGliFD2lmO/R4u8pARVylX3w4oLX8VSHKmGgJVjDEPeWCQpaIIgHqFk+QZ+HeE0BStkWKRsDWPmiqcraTikanU8jVT/IiFK57FOkwBxCoSquPI0DP/MVc0veqGU1dovonZrpfxYeYlKRnS9JwdNEfjksd+w1W6+gvI1THjDVQGnp6+TuQSwwByxZZbHleZ0w+PUUf9MR3r0AJmnPM5fCanjWO1QfBJWI5TuqnttmznqSzxkuSyt0bLMZgj5jkOXVWkmMc6mkFDZgKYCwyieVcGsmTBSnQihSUwQEdKVcVXRZlCHUa7YZ17MGmXm4lCzciww80tCpg3JAl9NhpIg8svQkVRMy1INjBz6C0IjF7w0bDjeoqWZ4skG37eAxqpn/GNtx+E9FmNexAkwpt0HPxO0MZhWWNjzyofGq/cUtgmf9/5yHl6NhlsWmPN+1x0u69JpHgYm8/q7L7+bOQWCKulWUDggLAAAAHADAJ0BKkAAQAA+MRiLRCIhoREEACADBLSAAAgbqagCvELcgAD+/nyUAAAA'); }
+        
         .main-content h1 { font-size: 30px; color: #111; margin-top: 0;}
         .main-content p { font-size: 17px; text-align: justify; }
         .main-content img { max-width: 100%; height: auto; border-radius: 12px; margin: 20px 0; }
         footer { text-align: center; padding: 30px 20px; background: #fff; color: #888; border-top: 1px solid #eaeaea; font-size: 14px; }
         @media (max-width: 900px) { .wrapper { grid-template-columns: 1fr; } .header-inner { flex-direction: column; gap: 15px; } nav { margin-top: 10px; } nav a { margin: 0 10px; } }
         
-        /* استایل‌های جستجو */
         .search-input { width: 100%; padding: 12px 15px; border: 1px solid #eaeaea; border-radius: 8px; font-family: 'Vazirmatn', sans-serif; font-size: 14px; box-sizing: border-box; background: #f9f9f9; transition: border 0.3s; }
         .search-input:focus { outline: none; border-color: var(--primary); background: #fff; }
         #results-container { list-style: none; padding: 0; margin-top: 10px; font-size: 14px; }
@@ -87,20 +97,19 @@
         <aside class="sidebar">
             <div class="card author-box">
                 <img src="/logo.jpg" alt="لوگو کاراستارز">
-                <!-- تغییر نام به کاراستارز -->
                 <h3>کاراستارز</h3>
                 <p>با آموزش‌های ساده، به‌روز و کاربردی، مهارت‌های دیجیتال و هوش مصنوعی رو یاد بگیر و در دنیای تکنولوژی حرفه‌ای شو!</p>
                 
-                <!-- شبکه‌های اجتماعی آپدیت شده -->
+                <!-- استفاده از نقاب‌های دقیق لوگوهای شما که رنگ متن می‌گیرند -->
                 <div class="social-links">
-                    <a href="https://aparat.com/car_stars_7" title="آپارات"><i class="fa-solid fa-video"></i></a>
+                    <a href="https://aparat.com/car_stars_7" title="آپارات"><i class="icon-mask icon-aparat"></i></a>
                     <a href="https://youtube.com/@car_stars_7" title="یوتیوب"><i class="fa-brands fa-youtube"></i></a>
                     <a href="https://t.me/car_stars_7" title="تلگرام"><i class="fa-brands fa-telegram"></i></a>
-                    <a href="https://ifilo.net/car_stars_7" title="فیلو"><i class="fa-solid fa-film"></i></a>
-                    <a href="https://rubika.ir/car_stars_7" title="روبیکا"><i class="fa-solid fa-cube"></i></a>
-                    <a href="https://eitaa.com/car_stars_7" title="ایتا"><i class="fa-solid fa-paper-plane"></i></a>
-                    <a href="https://splus.ir/car_stars_7" title="سروش پلاس"><i class="fa-solid fa-dove"></i></a>
-                    <a href="https://ble.ir/car_stars_7" title="بله"><i class="fa-solid fa-comment-dots"></i></a>
+                    <a href="https://ifilo.net/car_stars_7" title="فیلو"><i class="icon-mask icon-filo"></i></a>
+                    <a href="https://rubika.ir/car_stars_7" title="روبیکا"><i class="icon-mask icon-rubika"></i></a>
+                    <a href="https://eitaa.com/car_stars_7" title="ایتا"><i class="icon-mask icon-eitaa"></i></a>
+                    <a href="https://splus.ir/car_stars_7" title="سروش پلاس"><i class="icon-mask icon-soroush"></i></a>
+                    <a href="https://ble.ir/car_stars_7" title="بله"><i class="icon-mask icon-bale"></i></a>
                 </div>
             </div>
 
@@ -131,7 +140,7 @@
             resultsContainer: document.getElementById('results-container'),
             json: '/search.json',
             searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
-            noResultsText: '<li style="color: #777; font-size: 13px;">مقاله‌ای با این نام پیدا نشد!</li>'
+            noResultsText: '<li style="color: #777; font-size: 13px;">مقاله‌ای پیدا نشد!</li>'
         })
     </script>
 </body>
