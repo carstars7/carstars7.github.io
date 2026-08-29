@@ -6,30 +6,32 @@ layout: default
     .post-title-main { margin-top: 0; font-size: 32px; color: #111; line-height: 1.5; margin-bottom: 15px; }
     .post-meta-main { display: flex; gap: 20px; font-size: 14px; color: #777; margin-bottom: 30px; padding-bottom: 15px; border-bottom: 1px solid #eee; flex-wrap: wrap; }
     .post-meta-main i { color: var(--primary); }
+    .post-meta-main a { color: #777; text-decoration: none; transition: 0.2s;}
+    .post-meta-main a:hover { color: var(--primary); }
     
     .post-content-main { font-size: 17px; line-height: 1.9; color: #333; text-align: justify; }
     .post-content-main img { max-width: 100%; border-radius: 12px; margin: 20px 0; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-    
     .post-footer-ad { margin-top: 40px; }
-    
     @media (max-width: 768px) { .post-box { padding: 25px 20px; } .post-title-main { font-size: 24px; } }
 </style>
 
 <article class="post-box">
     <h1 class="post-title-main">{{ page.title }}</h1>
     
+    {% assign author_name = page.author | default: "محمد صدرا عظیمی" %}
+    {% assign cat_name = page.category | default: "هوش مصنوعی" %}
+    {% assign date_name = page.date | date: "%Y-%m" %}
+    
     <div class="post-meta-main">
-        <span><i class="fa-regular fa-calendar"></i> تاریخ: {{ page.date | date: "%Y-%m-%d" }}</span>
-        <!-- خواندن خودکار نویسنده و دسته‌بندی از داخل مقاله -->
-        <span><i class="fa-regular fa-user"></i> نویسنده: {{ page.author | default: "محمد صدرا" }}</span>
-        <span><i class="fa-solid fa-folder-open"></i> دسته: {{ page.category | default: "هوش مصنوعی" }}</span>
+        <span><i class="fa-regular fa-calendar"></i> <a href="/archives.html#{{ date_name }}">تاریخ: {{ page.date | date: "%Y-%m-%d" }}</a></span>
+        <span><i class="fa-regular fa-user"></i> <a href="/authors.html#{{ author_name | replace: ' ', '-' }}">نویسنده: {{ author_name }}</a></span>
+        <span><i class="fa-solid fa-folder-open"></i> <a href="/categories.html#{{ cat_name | replace: ' ', '-' }}">دسته: {{ cat_name }}</a></span>
     </div>
     
     <div class="post-content-main">
         {{ content }}
     </div>
 
-    <!-- جایگاه تبلیغات همسان انتهای مقاله -->
     <div class="post-footer-ad">
         <div id="mediaad-4510X"></div>
     </div>
