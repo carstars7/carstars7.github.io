@@ -5,19 +5,10 @@ title: کاراستارز | صفحه اصلی
 <style>
     .page-header { display: flex; align-items: center; gap: 10px; margin-bottom: 25px; font-size: 24px; color: #222; font-weight: 800; }
     .page-header i { color: var(--primary); }
-    
-    .post-card {
-        background: #fff; border: 1px solid #f0f0f0; border-radius: 14px;
-        padding: 25px; margin-bottom: 25px; transition: all 0.3s ease;
-        position: relative; overflow: hidden;
-    }
-    .post-card::before {
-        content: ''; position: absolute; right: 0; top: 0; width: 4px; height: 100%;
-        background: var(--secondary); transition: all 0.3s ease;
-    }
+    .post-card { background: #fff; border: 1px solid #f0f0f0; border-radius: 14px; padding: 25px; margin-bottom: 25px; transition: all 0.3s ease; position: relative; overflow: hidden; }
+    .post-card::before { content: ''; position: absolute; right: 0; top: 0; width: 4px; height: 100%; background: var(--secondary); transition: all 0.3s ease; }
     .post-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(249, 115, 22, 0.08); }
     .post-card:hover::before { width: 6px; background: var(--primary); }
-    
     .post-card h2 { margin: 0 0 15px 0; font-size: 22px; line-height: 1.6; }
     .post-card h2 a { color: #111; text-decoration: none; transition: color 0.2s;}
     .post-card h2 a:hover { color: var(--primary); }
@@ -25,14 +16,11 @@ title: کاراستارز | صفحه اصلی
     .post-meta { display: flex; gap: 20px; font-size: 13px; color: #777; margin-bottom: 15px; flex-wrap: wrap; }
     .post-meta div { display: flex; align-items: center; gap: 6px; }
     .post-meta i { color: #bbb; }
+    .post-meta a { color: #777; text-decoration: none; transition: 0.2s; }
+    .post-meta a:hover { color: var(--primary); }
     
     .post-excerpt { font-size: 15px; color: #555; margin-bottom: 20px; text-align: justify; }
-    
-    .read-more {
-        display: inline-block; background: #fff5eb; color: #c2410c;
-        padding: 8px 20px; border-radius: 8px; font-size: 14px;
-        font-weight: bold; text-decoration: none; transition: all 0.2s;
-    }
+    .read-more { display: inline-block; background: #fff5eb; color: #c2410c; padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: bold; text-decoration: none; transition: all 0.2s; }
     .read-more:hover { background: var(--primary); color: #fff; }
 </style>
 
@@ -42,20 +30,18 @@ title: کاراستارز | صفحه اصلی
 
 <div class="post-list">
   {% for post in site.posts %}
+    {% assign author_name = post.author | default: "محمد صدرا عظیمی" %}
+    {% assign cat_name = post.category | default: "هوش مصنوعی" %}
+    {% assign date_name = post.date | date: "%Y-%m" %}
+    
     <div class="post-card">
       <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      
       <div class="post-meta">
-          <div><i class="fa-regular fa-calendar"></i> {{ post.date | date: "%Y-%m-%d" }}</div>
-          <!-- خواندن خودکار نویسنده و دسته‌بندی با قابلیت پیش‌فرض -->
-          <div><i class="fa-regular fa-user"></i> {{ post.author | default: "محمد صدرا" }}</div>
-          <div><i class="fa-solid fa-folder-open"></i> {{ post.category | default: "هوش مصنوعی" }}</div>
+          <div><i class="fa-regular fa-calendar"></i> <a href="/archives.html#{{ date_name }}">{{ post.date | date: "%Y-%m-%d" }}</a></div>
+          <div><i class="fa-regular fa-user"></i> <a href="/authors.html#{{ author_name | replace: ' ', '-' }}">{{ author_name }}</a></div>
+          <div><i class="fa-solid fa-folder-open"></i> <a href="/categories.html#{{ cat_name | replace: ' ', '-' }}">{{ cat_name }}</a></div>
       </div>
-      
-      <div class="post-excerpt">
-          {{ post.excerpt | strip_html | truncatewords: 35 }}
-      </div>
-      
+      <div class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 35 }}</div>
       <a href="{{ post.url }}" class="read-more">ادامه مطلب <i class="fa-solid fa-arrow-left" style="margin-right: 5px; font-size: 12px;"></i></a>
     </div>
   {% endfor %}
