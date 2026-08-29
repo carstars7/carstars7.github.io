@@ -3,29 +3,14 @@ layout: default
 title: کاراستارز | صفحه اصلی
 ---
 <style>
-    .page-header {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 25px;
-        font-size: 24px;
-        color: #222;
-        font-weight: 800;
-    }
+    .page-header { display: flex; align-items: center; gap: 10px; margin-bottom: 25px; font-size: 24px; color: #222; font-weight: 800; }
     .page-header i { color: var(--primary); }
     
     .post-card {
-        background: #fff;
-        border: 1px solid #f0f0f0;
-        border-radius: 14px;
-        padding: 25px;
-        margin-bottom: 25px;
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
+        background: #fff; border: 1px solid #f0f0f0; border-radius: 14px;
+        padding: 25px; margin-bottom: 25px; transition: all 0.3s ease;
+        position: relative; overflow: hidden;
     }
-    
-    /* نوار کناری مقالات حالا زرد است و با هاور شدن نارنجی می‌شود */
     .post-card::before {
         content: ''; position: absolute; right: 0; top: 0; width: 4px; height: 100%;
         background: var(--secondary); transition: all 0.3s ease;
@@ -43,17 +28,10 @@ title: کاراستارز | صفحه اصلی
     
     .post-excerpt { font-size: 15px; color: #555; margin-bottom: 20px; text-align: justify; }
     
-    /* دکمه ادامه مطلب سازگار با تم نارنجی */
     .read-more {
-        display: inline-block;
-        background: #fff5eb;
-        color: #c2410c;
-        padding: 8px 20px;
-        border-radius: 8px;
-        font-size: 14px;
-        font-weight: bold;
-        text-decoration: none;
-        transition: all 0.2s;
+        display: inline-block; background: #fff5eb; color: #c2410c;
+        padding: 8px 20px; border-radius: 8px; font-size: 14px;
+        font-weight: bold; text-decoration: none; transition: all 0.2s;
     }
     .read-more:hover { background: var(--primary); color: #fff; }
 </style>
@@ -69,8 +47,9 @@ title: کاراستارز | صفحه اصلی
       
       <div class="post-meta">
           <div><i class="fa-regular fa-calendar"></i> {{ post.date | date: "%Y-%m-%d" }}</div>
-          <div><i class="fa-regular fa-user"></i> محمد صدرا</div>
-          <div><i class="fa-solid fa-folder-open"></i> هوش مصنوعی</div>
+          <!-- خواندن خودکار نویسنده و دسته‌بندی با قابلیت پیش‌فرض -->
+          <div><i class="fa-regular fa-user"></i> {{ post.author | default: "محمد صدرا" }}</div>
+          <div><i class="fa-solid fa-folder-open"></i> {{ post.category | default: "هوش مصنوعی" }}</div>
       </div>
       
       <div class="post-excerpt">
