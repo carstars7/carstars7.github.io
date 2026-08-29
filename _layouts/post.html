@@ -10,7 +10,6 @@ layout: default
     .post-content-main { font-size: 17px; line-height: 1.9; color: #333; text-align: justify; }
     .post-content-main img { max-width: 100%; border-radius: 12px; margin: 20px 0; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
     
-    /* تنظیمات باکس مدیااد پایین مقاله */
     .post-footer-ad { margin-top: 40px; }
     
     @media (max-width: 768px) { .post-box { padding: 25px 20px; } .post-title-main { font-size: 24px; } }
@@ -21,8 +20,9 @@ layout: default
     
     <div class="post-meta-main">
         <span><i class="fa-regular fa-calendar"></i> تاریخ: {{ page.date | date: "%Y-%m-%d" }}</span>
-        <span><i class="fa-regular fa-user"></i> نویسنده: محمد صدرا</span>
-        <span><i class="fa-solid fa-folder-open"></i> دسته: هوش مصنوعی</span>
+        <!-- خواندن خودکار نویسنده و دسته‌بندی از داخل مقاله -->
+        <span><i class="fa-regular fa-user"></i> نویسنده: {{ page.author | default: "محمد صدرا" }}</span>
+        <span><i class="fa-solid fa-folder-open"></i> دسته: {{ page.category | default: "هوش مصنوعی" }}</span>
     </div>
     
     <div class="post-content-main">
