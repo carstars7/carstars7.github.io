@@ -23,7 +23,7 @@ layout: default
     {% assign date_name = page.date | date: "%Y-%m" %}
     
     <div class="post-meta-main">
-        <span><i class="fa-regular fa-calendar"></i> <a href="/archives.html#{{ date_name }}">تاریخ: {{ page.date | date: "%Y-%m-%d" }}</a></span>
+        <span><i class="fa-regular fa-calendar"></i> <a href="/archives.html#{{ date_name }}">تاریخ: <span class="jalali-date" data-date="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%Y-%m-%d" }}</span></a></span>
         <span><i class="fa-regular fa-user"></i> <a href="/authors.html#{{ author_name | replace: ' ', '-' }}">نویسنده: {{ author_name }}</a></span>
         <span><i class="fa-solid fa-folder-open"></i> <a href="/categories.html#{{ cat_name | replace: ' ', '-' }}">دسته: {{ cat_name }}</a></span>
     </div>
