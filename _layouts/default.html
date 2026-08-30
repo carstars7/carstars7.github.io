@@ -5,7 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <meta name="google-site-verification" content="PYXn9t45sanThb2aLx0SCVAMLN1GLoAuCIVJXpo0bOA" />
-    <title>{{ page.title | default: "کاراستارز | آموزش هوش مصنوعی" }}</title>
+    
+    <!-- کدهای طلایی سئو برای اصلاح نام سایت و برند در گوگل -->
+    <meta property="og:site_name" content="کاراستارز">
+    <meta property="og:title" content="{{ page.title }}">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "کاراستارز",
+      "alternateName": "Carstars",
+      "url": "https://carstars7.github.io/"
+    }
+    </script>
+
+    <title>{{ page.title | default: "کاراستارز | آموزش و ترفند های هوش مصنوعی" }}</title>
     
     <link rel="icon" type="image/jpeg" href="/logo.jpg">
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.0/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
@@ -61,7 +75,6 @@
         .icon-soroush { -webkit-mask-image: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTUwIDE0OCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMDUsMTAgTDk5LDkgTDg5LDEzIEw4NSwxOSBMODUsMjkgTDg3LDMzIEwxMTIsNTYgTDExOSw2OSBMMTIyLDgwIEwxMjIsOTcgTDExOSwxMDggTDExMCwxMjMgTDEwMywxMzAgTDkwLDEzNyBMNzUsMTQxIEw2MCwxNDEgTDQ4LDEzOCBMMzUsMTMxIEw0NCwxMzcgTDU0LDE0MSBMNjksMTQ0IEw4MSwxNDQgTDkyLDE0MiBMMTEwLDEzNCBMMTM1LDE0MSBMMTMyLDExNCBMMTM3LDEwNiBMMTQzLDkwIEwxNDMsNTggTDEzOCw0MyBMMTMwLDMwIEwxMTcsMTcgWiBNODcsNCBMODQsNCBMODMsMyBMNjcsMyBMNDgsOCBMMzgsMTMgTDI3LDIxIEwxNCwzNyBMOSw0NyBMNSw2MiBMNSw4NSBMNiw4NiBMOCw5NyBMMTMsMTA4IEwyMywxMTggTDMyLDEyMSBMNDEsMTIwIEw0OSwxMTYgTDU2LDEwOCBMNTcsMTAxIEw1OCwxMDAgTDU3LDkwIEw1NSw4NyBMNTUsODQgTDUzLDgxIEw0OCw2NiBMNDgsNjIgTDQ2LDU2IEw0Niw0OSBMNDUsNDggTDQ3LDMxIEw0OSwyNSBMNTQsMTYgTDYzLDggTDc1LDQgWiAiIGZpbGw9ImJsYWNrIi8+PC9zdmc+'); }
         .icon-bale { -webkit-mask-image: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTQ4IDE0OCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00LDEgTDEsNCBMMCw4IEwxLDg2IEw3LDEwNSBMMTgsMTIyIEwyNSwxMjkgTDM4LDEzOCBMNTIsMTQ0IEw2OCwxNDcgTDc5LDE0NyBMOTUsMTQ0IEwxMTEsMTM3IEwxMjEsMTMwIEwxMzcsMTExIEwxNDQsOTUgTDE0Nyw3OCBMMTQ2LDYwIEwxNDQsNTIgTDEzOCwzOCBMMTI5LDI1IEwxMjIsMTggTDEwOSw5IEw5NSwzIEw4NiwxIEw3MCwwIEw1NiwyIEw0Miw3IEwzMSwxNCBMMTIsMSBaIE0xMjAsNDcgTDEyMCw0OSBMMTIxLDUwIEwxMjEsNTggTDExOSw2MiBMNzEsMTEwIEw2NiwxMTIgTDYyLDExMiBMNjEsMTExIEw1OCwxMTEgTDU2LDExMCBMMjgsODIgTDI2LDc4IEwyNiw3MCBMMjgsNjYgTDMzLDYxIEwzNyw1OSBMNDQsNTkgTDQ1LDYwIEw0Nyw2MCBMNTAsNjIgTDY0LDc2IEw2NCw3NSBMNjYsNzQsTDY2LDczIEw2OCw3MiBMNjgsNzEgTDcwLDcwIEw3MCw2OSBMNzIsNjggTDcyLDY3IEw3NCw2NiBMNzQsNjUgTDc2LDY0IEw3Niw2MyBMNzgsNjIgTDc4LDYxIEw4MCw2MCBMODAsNTkgTDgyLDU4IEw4Myw1NiBMODUsNTUgTDg1LDU0IEw4Nyw1MyBMODcsNTIgTDg5LDUxIEw4OSw1MCBMOTEsNDkgTDkxLDQ4IEw5Myw0NyBMOTMsNDYgTDEwMCw0MCBMMTAyLDQwIEwxMDMsMzkgTDExMCwzOSBMMTE0LDQxIFogIiBmaWxsPSJibGFjayIvPjwvc3ZnPg=='); }
         
-        /* استایل لیست‌های سایدبار (آرشیوها) */
         .sidebar-list { list-style: none; padding: 0; margin: 0; }
         .sidebar-list li { margin-bottom: 12px; border-bottom: 1px dashed #eee; padding-bottom: 12px; display: flex; justify-content: space-between; align-items: center; }
         .sidebar-list li:last-child { margin-bottom: 0; border-bottom: none; padding-bottom: 0; }
@@ -121,7 +134,6 @@
                 </div>
             </div>
             
-            <!-- باکس دسته‌بندی‌ها در سایدبار -->
             <div class="card" style="padding: 25px 20px;">
                 <div class="sidebar-title"><i class="fa-solid fa-folder-open"></i> دسته‌بندی‌ها</div>
                 <ul class="sidebar-list">
@@ -131,7 +143,6 @@
                 </ul>
             </div>
             
-            <!-- باکس بایگانی تاریخ در سایدبار -->
             <div class="card" style="padding: 25px 20px;">
                 <div class="sidebar-title"><i class="fa-regular fa-calendar-days"></i> بایگانی مطالب</div>
                 <ul class="sidebar-list">
@@ -142,7 +153,6 @@
                 </ul>
             </div>
             
-            <!-- باکس نویسندگان در سایدبار -->
             <div class="card" style="padding: 25px 20px;">
                 <div class="sidebar-title"><i class="fa-solid fa-users"></i> نویسندگان</div>
                 <ul class="sidebar-list">
