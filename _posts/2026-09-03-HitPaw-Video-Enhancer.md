@@ -81,11 +81,11 @@ category: "معرفی نرم افزار"
   </div>
   
   <!-- لینک تلگرام، مدیافایر یا هرجایی که آپلود کردی را جایگزین لینک زیر کن -->
-  <a href="https://t.me/car_stars_7/123" class="dl-btn" target="_blank">
+  <a href="https://t.me/car_stars_7/2865" class="dl-btn" target="_blank">
     <i class="fa-solid fa-download"></i> دانلود HitPaw Video Enhancer
   </a>
   
   <div class="dl-pass">
-    <i class="fa-solid fa-key" style="color:#f97316;"></i> رمز فایل فشرده (در صورت نیاز): <strong>ندارد</strong>
+    <i class="fa-solid fa-key" style="color:#f97316;"></i> رمز فایل فشرده (در صورت نیاز): <strong>soft98.ir</strong>
   </div>
 </div>
