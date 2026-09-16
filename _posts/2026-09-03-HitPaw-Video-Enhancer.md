@@ -76,7 +76,7 @@ category: "معرفی نرم افزار"
   <div class="dl-title"><i class="fa-solid fa-cloud-arrow-down"></i> باکس دانلود نرم‌افزار</div>
   
   <div class="dl-info">
-    <span><i class="fa-solid fa-file-zipper"></i> حجم: ۳۵۰ مگابایت</span>
+    <span><i class="fa-solid fa-file-zipper"></i> حجم: ۸۶۸٫۳ مگابایت</span>
     <span><i class="fa-brands fa-windows"></i> نسخه: ویندوز ۶۴ بیت</span>
   </div>
   
