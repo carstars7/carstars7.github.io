@@ -89,3 +89,7 @@ category: "معرفی نرم افزار"
     <i class="fa-solid fa-key" style="color:#f97316;"></i> رمز فایل فشرده (در صورت نیاز): <strong>soft98.ir</strong>
   </div>
 </div>
+
+
+
+<style>.h_iframe-aparat_embed_frame{position:relative;}.h_iframe-aparat_embed_frame .ratio{display:block;width:100%;height:auto;}.h_iframe-aparat_embed_frame iframe{position:absolute;top:0;left:0;width:100%;height:100%;}</style><div class="h_iframe-aparat_embed_frame"><span style="display: block;padding-top: 57%"></span><iframe src="https://www.aparat.com/video/video/embed/videohash/lxe101s/vt/frame?muted=true"  allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe></div>
