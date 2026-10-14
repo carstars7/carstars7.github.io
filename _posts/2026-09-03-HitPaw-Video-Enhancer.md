@@ -116,7 +116,7 @@ category: "معرفی نرم‌افزار"
             </a>
             
             <!-- لینک کمکی (مثلا هدایت به کانال تلگرام/روبیکا) -->
-            <a href="لینک_کانال_تلگرام_یا_روبیکا" class="dl-btn dl-btn-alt">
+            <a href="https://t.me/car_stars_7/2865" class="dl-btn dl-btn-alt">
                 <i class="fa-brands fa-telegram"></i> دانلود از کانال
             </a>
         </div>
