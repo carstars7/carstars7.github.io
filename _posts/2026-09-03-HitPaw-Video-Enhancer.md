@@ -104,14 +104,14 @@ category: "معرفی نرم‌افزار"
     <div class="dl-body">
         <ul class="dl-info">
             <li><i class="fa-solid fa-file-zipper"></i> <strong>نام فایل:</strong> HitPaw.Video.Enhancer.v3.0.rar</li>
-            <li><i class="fa-solid fa-hard-drive"></i> <strong>حجم فایل:</strong> ۳۵۰ مگابایت</li>
+            <li><i class="fa-solid fa-hard-drive"></i> <strong>حجم فایل:</strong> 868 مگابایت</li>
             <li><i class="fa-brands fa-windows"></i> <strong>سیستم عامل:</strong> ویندوز ۱۰ و ۱۱ (فقط ۶۴ بیت)</li>
-            <li><i class="fa-solid fa-key"></i> <strong>رمز فایل فشرده:</strong> <span class="dl-pass">carstars</span> (با حروف کوچک)</li>
+            <li><i class="fa-solid fa-key"></i> <strong>رمز فایل فشرده:</strong> <span class="dl-pass">soft98.ir</span> (با حروف کوچک)</li>
         </ul>
         
         <div class="dl-buttons">
             <!-- لینک دانلود مستقیم (مثلا پیکوفایل یا ترین‌بیت) -->
-            <a href="لینک_دانلود_را_اینجا_بگذار" class="dl-btn">
+            <a href="https://t.me/car_stars_7/2865" class="dl-btn">
                 <i class="fa-solid fa-download"></i> دانلود با لینک مستقیم
             </a>
             
